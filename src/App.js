@@ -3,10 +3,10 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-//import Home from './containers/Home/Home';
+import Home from './containers/Home/Home';
 //import Login from './containers/Login/Login';
 //import Logout from './containers/Logout/Logout';
-//import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 //import Register from './containers/Register/Register';
 //import axios from 'axios';
 //import Profile from './containers/Profile/Profile';
@@ -42,7 +42,9 @@ function App() {
     <BrowserRouter>
     
       <Header />
-      
+
+      <Home />
+
       <Footer />
       
     </BrowserRouter >
