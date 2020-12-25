@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    align-items: center;
+    min-height: 5vh;
+    a,
+    span {
+        all: unset;
+        cursor: pointer;
+        padding: 0.8em;
+        &:hover {
+            background-color: cyan;
+        }
+    }
+    .logout {
+        cursor: pointer;
+    }
+    
+}
+.notLoggedIn{
+    display: flex;
+    position: absolute;
+    right: 1px;
+}
