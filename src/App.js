@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
-//import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 //import Home from './containers/Home/Home';
 //import Login from './containers/Login/Login';
@@ -43,7 +43,12 @@ function App() {
     
       <Header />
       
+      <Footer />
+      
     </BrowserRouter >
+
+     
+
     );
   }
 
