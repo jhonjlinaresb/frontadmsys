@@ -1,5 +1,5 @@
 .footer{
-    background: #2c2c2c;
+    background: #1c1c1c;
     display: flex;
     position: absolute;
     justify-content: center;
@@ -9,6 +9,9 @@
     bottom: 0.1px;
     padding-bottom: 1em;
 }
+.footer:hover{
+    background: #2c2c2c;
+}
 
 
 .contenido{
@@ -17,5 +20,6 @@
     text-align: center;
    }
 .contenido:hover{
-       color: red;
+       color: cyan;
+       top: 0.1em;
    }
