@@ -6,7 +6,7 @@ import './Footer.scss'
 const Footer = () => {
     return (
         <div className="footer">
-            <p  style={{ padding: '2px', textAlign: 'center' }}>JHON JAIRO LINARES ©2020 GEEKSHUBS ACADEMY | VALENCIA-SPAIN</p>
+            <p className="contenido">JHON JAIRO LINARES ©2020-2021 | GEEKSHUBS ACADEMY | VALENCIA-SPAIN</p>
         </div>
     )
 }

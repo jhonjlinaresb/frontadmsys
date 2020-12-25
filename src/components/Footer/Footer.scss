@@ -7,10 +7,15 @@
     width: 100%;
     height: 6vh;
     bottom: 0.1px;
-
-    p{
-     bottom: 1em;
-     color: white;
-     padding: 4em;
-    }
+    padding-bottom: 1em;
 }
+
+
+.contenido{
+    position: absolute;
+    color: white;
+    text-align: center;
+   }
+.contenido:hover{
+       color: red;
+   }
