@@ -18,7 +18,7 @@ const tailLayout = {
     const history = useHistory();
     const onFinish = users =>{
         console.log('onFinish');
-        axios.post(process.env.REACT_APP_BASE_URL || 'http://localhost:8080' +'/users/login',users)
+        axios.post(process.env.REACT_APP_BASE_URL +'/users/login',users)
         .then(res=>{
          // props.setUser(res.data.user) //seteo el user como estado del App.js
             console.log("res data chanda: "+JSON.stringify(res.data));
@@ -34,8 +34,8 @@ const tailLayout = {
     }
     return (
     <div className="block">
-      <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '30px', justifyContent: 'center'}}>
-      <Card title="Login" bordered={false} style={{ width: 300, textAlign: 'center' }}>
+      <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '70px', justifyContent: 'center'}}>
+      <Card className="box" title="Login" bordered={false} style={{ width: 400, textAlign: 'center' }}>
         <Form {... layout}
         onFinish={onFinish}>
             <Form.Item

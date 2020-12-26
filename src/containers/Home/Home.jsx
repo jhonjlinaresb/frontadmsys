@@ -7,7 +7,7 @@ const contentStyle = {
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',
-  background: '#2c2c2c',
+  background: 'linear-gradient(140DEG, #1c1c1c, cyan, black, cyan, #2c2c2c)',
 };
 class Home extends Component {
     render(){
@@ -15,7 +15,7 @@ class Home extends Component {
     <Carousel autoplay>
     <div>
     <h1 style={contentStyle}>
-    <p>Welcome to AdmSys</p>
+    <p>Welcome to AdmSys Web APP</p>
     <Image width={300} src="https://i.ibb.co/P54hyMm/admsys.png"/> 
     </h1>
     </div>
