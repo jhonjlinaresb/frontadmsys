@@ -8,7 +8,7 @@ import Login from './containers/Login/Login';
 //import Logout from './containers/Logout/Logout';
 import 'antd/dist/antd.css';
 //import Register from './containers/Register/Register';
-//import axios from 'axios';
+import axios from 'axios';
 //import Profile from './containers/Profile/Profile';
 //import Appointments from './containers/Appointments/Appointments';
 //import PrivateZone from './guards/PrivateZone';
@@ -16,7 +16,7 @@ import 'antd/dist/antd.css';
 //import UserList from './containers/UserList/UserList';
 //import CheckPrivileges from './guards/CheckPrivileges';
 function App() {
-/* {
+
   console.log(process.env.REACT_APP_BASE_URL);
   let initialUser = null;
   try {
@@ -37,14 +37,14 @@ function App() {
       .then(res => {
         setUser(res.data)
       })
-  }, []) */
+  }, []) 
   return (
     <BrowserRouter>
     
       <Header />
       <Switch>
       <Route path='/' component={Home} exact />
-      <Route path='/login' exact ><Login /></Route>
+      <Route path='/login' exact ><Login setUser={setUser} /></Route>
       </Switch>
 
       <Footer />

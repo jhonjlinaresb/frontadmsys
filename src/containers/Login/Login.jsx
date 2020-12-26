@@ -17,7 +17,7 @@ const tailLayout = {
     const history = useHistory();
     const onFinish = users =>{
         console.log('onFinish');
-        axios.post(process.env.REACT_APP_BASE_URL+'/users/login',users)
+        axios.post(process.env.REACT_APP_BASE_URL || 'http://localhost:8080' +'/users/login',users)
         .then(res=>{
          // props.setUser(res.data.user) //seteo el user como estado del App.js
             console.log("res data chanda: "+JSON.stringify(res.data));
