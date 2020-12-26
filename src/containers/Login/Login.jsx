@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom';
 import { Form, Input, Button, Checkbox } from 'antd';
 import {notification} from 'antd';
 import { Card } from 'antd';
+import './Login.scss'
 
 const layout = {
   labelCol: { span: 8 },
@@ -32,6 +33,7 @@ const tailLayout = {
         .catch(error=>console.log(error))
     }
     return (
+    <div className="block">
       <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '30px', justifyContent: 'center'}}>
       <Card title="Login" bordered={false} style={{ width: 300, textAlign: 'center' }}>
         <Form {... layout}
@@ -58,12 +60,13 @@ const tailLayout = {
 
       <Form.Item {...tailLayout} >
         <Button type="primary" htmlType="submit">
-          Submit
+          Login
         </Button>
         </Form.Item>
         </Form>
         </Card>
         </div>
+    </div>
     )
 }
 
