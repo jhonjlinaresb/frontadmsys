@@ -4,7 +4,7 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './containers/Home/Home';
-//import Login from './containers/Login/Login';
+import Login from './containers/Login/Login';
 //import Logout from './containers/Logout/Logout';
 import 'antd/dist/antd.css';
 //import Register from './containers/Register/Register';
@@ -42,8 +42,10 @@ function App() {
     <BrowserRouter>
     
       <Header />
-
-      <Home />
+      <Switch>
+      <Route path='/' component={Home} exact />
+      <Route path='/login' exact ><Login /></Route>
+      </Switch>
 
       <Footer />
       
