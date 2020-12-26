@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Button, notification } from 'antd';
 import { Card } from 'antd';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 const layout = {
     labelCol: {
         span: 8,
@@ -25,14 +26,17 @@ const Register = () => {
             }).catch(error => {
                 notification.error({ message: 'Error en el registro', description: 'Hubo un error al tratar de registrar al usuario, revisa tus campos' })
             })
+            
     };
+     
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);  
     };
     return (
+        <div className="block">
         <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '30px', justifyContent: 'center'}}>
-       <Card title="Register" bordered={false} style={{ width: 300, textAlign: 'center' }}>
+       <Card className="box" title="Register" bordered={false} style={{ width: 400, textAlign: 'center' }}>
         <Form
             {...layout}
             name="basic"
@@ -105,12 +109,13 @@ const Register = () => {
 
             <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
-                    Submit
+                   Register
         </Button>
             </Form.Item>
             
         </Form>
         </Card>
+        </div>
         </div>
     )
 }
