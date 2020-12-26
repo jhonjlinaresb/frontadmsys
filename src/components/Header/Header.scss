@@ -3,6 +3,7 @@
     align-items: center;
     min-height: 5vh;
     background-color: #1c1c1c;
+    border-bottom: transparentize($color: #2c2c2c, $amount: 0);
     a,
     span {
         color: white;
@@ -25,4 +26,7 @@
     display: flex;
     position: absolute;
     right: 1px;
+    &:hover{
+        border-bottom: cyan 1px solid;
+    }
 }
