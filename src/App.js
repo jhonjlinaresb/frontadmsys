@@ -9,7 +9,7 @@ import Login from './containers/Login/Login';
 import 'antd/dist/antd.css';
 import Register from './containers/Register/Register';
 import axios from 'axios';
-//import Profile from './containers/Profile/Profile';
+import Profile from './containers/Profile/Profile';
 //import Appointments from './containers/Appointments/Appointments';
 //import PrivateZone from './guards/PrivateZone';
 //import Error404 from './containers/Error404/Error404.jsx';
@@ -43,6 +43,7 @@ function App() {
     
       <Header />
       <Switch>
+      <Route path='/profile' exact><Profile user={user} /></Route>
       <Route path='/' component={Home} exact />
       <Route path='/login' exact ><Login setUser={setUser} /></Route>
       <Route path='/register' component={Register} exact />
