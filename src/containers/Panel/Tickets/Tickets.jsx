@@ -1,14 +1,20 @@
 import React from 'react';
-import Profile from '../../Profile/Profile'
+//import Profile from '../../Profile/Profile'
 import { Link } from 'react-router-dom';
-import { Layout } from 'antd';
+import { Layout, Menu, Breadcrumb } from 'antd';
 import { Form, Input, Button, notification } from 'antd';
-import { Card } from 'antd';
+
 import { DatePicker } from 'antd';
 import axios from 'axios';
-
+import {
+    DesktopOutlined,
+    PieChartOutlined,
+    FileOutlined,
+    UserOutlined,
+  } from '@ant-design/icons';
 
 const { Header, Sider, Content } = Layout;
+const { SubMenu } = Menu;
 
 const layout = {
   labelCol: {
@@ -24,6 +30,8 @@ const tailLayout = {
       span: 16,
   },
 };
+
+
 const Tickets = ({ user }) => {
 
     const onFinish = (appointmentData) => {
@@ -50,24 +58,51 @@ const Tickets = ({ user }) => {
     };
     return (
       <>
+      
+      <Layout style={{ minHeight: '90vh' }}>
+        <Sider>
+          <div className="logo" />
+          
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+          
+            <Menu.Item key="1" icon={<PieChartOutlined />}>
+            View Tickets <Link to="/profile" />
+            </Menu.Item>
 
-    <Profile >
-    <Layout>
+            
+            <Menu.Item  key="2" icon={<DesktopOutlined />}>
+              Create Ticket <Link to="/tickets"/>
+            </Menu.Item>
+
+            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+              <Menu.Item key="3">View</Menu.Item>
+              <Menu.Item key="4">Modify</Menu.Item>
+            </SubMenu>
+            <Menu.Item key="9" icon={<FileOutlined />}>
+              Files
+            </Menu.Item>
+          </Menu>
+          
+        </Sider>
+    
+    <Layout className="site-layout">
+              <Content style={{ margin: '0 16px' }}>
+              <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>Tickets</Breadcrumb.Item>
+              <Breadcrumb.Item>Create Ticket</Breadcrumb.Item>
+            </Breadcrumb>
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+              Create a Ticket for Support
+              <Layout>
         
-      <Header><h1 style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', color: 'white' }}>Bienvenido {user?.email}</h1></Header>
+       <Header><h5 style={{ textAlign: 'center', display: 'flex',  width: 200 ,justifyContent: 'center', color: 'white' }}>Bienvenido {user?.email}</h5></Header>
 
        <Layout>
        <Content style={{display: 'flex', justifyContent: 'center'}}>
       <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '30px', justifyContent: 'center'}}>
-      <Sider style={{display: 'flex', padding: '2px', justifyContent: 'center', textAlign: 'center' }}>
-        
-        <Button style={{textAlign: 'center', display: 'flex', justifyContent: 'center', padding: '20px', margin: '10em'}} type="primary" htmlType="submit">
-                  
-                  <Link style={{textAlign: 'center', display: 'flex', justifyContent: 'center', margin: '-0.6em'}} to='/appointments'>Citas</Link>
-        </Button>
-      </Sider>
       
-       <Card title="Pedir cita" bordered={false} style={{ width: 300, textAlign: 'center' }}>
+      
+       
         <Form
             {...layout}
             name="basic"
@@ -138,14 +173,18 @@ const Tickets = ({ user }) => {
             </Form.Item>
             
         </Form>
-        </Card>
         
       
         </div>
         </Content>
         </Layout>
-    </Layout></Profile>
-  </>
+    </Layout>
+  
+            </div>
+          </Content>
+        </Layout>
+</Layout>
+    </>
 );
 }
 export default Tickets;

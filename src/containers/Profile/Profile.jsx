@@ -54,7 +54,7 @@ const { SubMenu } = Menu;
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
           
             <Menu.Item key="1" icon={<PieChartOutlined />}>
-            View Tickets
+            View Tickets <Link to="/profile" /> 
             </Menu.Item>
 
             
