@@ -1,8 +1,8 @@
 import React from 'react';
-//import Profile from '../../Profile/Profile'
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { Form, Input, Button, notification } from 'antd';
+import { Form, Input, Button, notification, Switch } from 'antd';
+import './Tickets.scss';
 
 import { DatePicker } from 'antd';
 import axios from 'axios';
@@ -13,43 +13,43 @@ import {
     UserOutlined,
   } from '@ant-design/icons';
 
-const { Header, Sider, Content } = Layout;
+const {  Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
 const layout = {
   labelCol: {
-      span: 8,
+      span: 9,
   },
   wrapperCol: {
-      span: 16,
+      span: 8,
   },
 };
 const tailLayout = {
   wrapperCol: {
       offset: 8,
-      span: 16,
+      span: 9,
   },
 };
 
 
 const Tickets = ({ user }) => {
 
-    const onFinish = (appointmentData) => {
-        let appoinment = {
-            'status': appointmentData.status,
-            'date':appointmentData.date,
-            'observations': appointmentData.observations,
-            'dentist': appointmentData.dentist,
+    const onFinish = (ticketData) => {
+        let ticket = {
+            'status': ticketData.status,
+            'date': ticketData.date,
+            'observations': ticketData.observations,
+            'text': ticketData.text,
             'dni': user.dni
         }
-        console.log('appointment: '+JSON.stringify(appoinment));
+        console.log('tickett: '+JSON.stringify(ticket));
         console.log('user: '+JSON.stringify(user));
-        axios.post(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/appoinments', appoinment)
+        axios.post(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets', ticket)
             .then(res => {
                 console.log(res.data)
-                notification.success({ message :'Cita creada correctamente',description:'Cita creada'})
+                notification.success({ message :'Ticket Create Succesfuly',description:'Ticket Create'})
             }).catch(error => {
-                notification.error({ message: 'Error al crear cita', description: 'Hubo un error al crear cita' })
+                notification.error({ message: 'Error to create Ticket', description: 'Error to create' })
             })
     };
 
@@ -59,11 +59,11 @@ const Tickets = ({ user }) => {
     return (
       <>
       
-      <Layout style={{ minHeight: '90vh' }}>
+      <Layout style={{ minHeight: '90vh'}}>
         <Sider>
           <div className="logo" />
           
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+          <Menu theme="dark" defaultSelectedKeys={['2']} mode="inline">
           
             <Menu.Item key="1" icon={<PieChartOutlined />}>
             View Tickets <Link to="/profile" />
@@ -95,7 +95,7 @@ const Tickets = ({ user }) => {
               Create a Ticket for Support
               <Layout>
         
-       <Header><h5 style={{ textAlign: 'center', display: 'flex',  width: 200 ,justifyContent: 'center', color: 'white' }}>Bienvenido {user?.email}</h5></Header>
+      <h5 style={{ textAlign: 'center', display: 'flex',  width: 200 ,justifyContent: 'center', color: 'white' }}>Bienvenido {user?.email}</h5>
 
        <Layout>
        <Content style={{display: 'flex', justifyContent: 'center'}}>
@@ -115,20 +115,21 @@ const Tickets = ({ user }) => {
         >
 
             <Form.Item
-                label="Estado"
+                label="Status"
                 name="status"
                 rules={[
                     {
                         required: true,
-                        message: 'Estado',
+                        message: 'Active',
                     },
                 ]}
             >
-                <Input />
+                
+                 <Switch />
                 </Form.Item>
 
                 <Form.Item
-                label="Servicio"
+                label="Error"
                 name="observations"
                 rules={[
                     {
@@ -154,12 +155,12 @@ const Tickets = ({ user }) => {
             </Form.Item>
 
             <Form.Item
-                label="Dentista"
-                name="dentist"
+                label="Text"
+                name="text"
                 rules={[
                     {
                         required: true,
-                        message: 'Introduzca el nombre del dentista',
+                        message: 'Describe your problem',
                     },
                 ]}
                 >
@@ -169,21 +170,21 @@ const Tickets = ({ user }) => {
             <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
                     Create
-        </Button>
+                </Button>
             </Form.Item>
             
         </Form>
         
       
-        </div>
+            </div>
         </Content>
         </Layout>
-    </Layout>
+        </Layout>
   
             </div>
           </Content>
         </Layout>
-</Layout>
+        </Layout>
     </>
 );
 }

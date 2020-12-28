@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { Layout } from 'antd';
-import { Form, Input, Button, notification } from 'antd';
-//import { DatePicker } from 'antd';
-//import axios from 'axios';
 import './Profile.scss'
-//import Tickets from '../Panel/Tickets/Tickets';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {

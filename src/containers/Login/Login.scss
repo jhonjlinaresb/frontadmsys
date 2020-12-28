@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     //background: linear-gradient(137DEG, #1c1c1c, cyan, black, cyan, #2c2c2c);
-    background: repeating-linear-gradient( 123deg, #00cccc,#1c1c1c, #1c1c1c);
+    background: repeating-linear-gradient( 123deg, #002366,black, #1c1c1c, #002366);
     .box {
         background: repeating-linear-gradient( 120deg,  #00cccc,black, black);
         border: black transparentize($color: #000000, $amount: 1) 1px;

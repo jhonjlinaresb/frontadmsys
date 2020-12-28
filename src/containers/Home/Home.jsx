@@ -7,7 +7,7 @@ const contentStyle = {
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',
-  background: 'linear-gradient(140DEG, #1c1c1c, cyan, black, cyan, #2c2c2c)',
+  background: 'linear-gradient(210DEG, #1c1c1c, #001529, black, #001529, #2c2c2c)',
 };
 class Home extends Component {
     render(){

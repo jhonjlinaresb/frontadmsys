@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     min-height: 5vh;
-    background-color:black;
+    background-color:#001529;
     border-bottom: transparentize($color: black, $amount: 0);
     a,
     span {
@@ -11,9 +11,9 @@
         cursor: pointer;
         padding: 0.8em;
         &:hover {
-            background-color: #2c2c2c;
-            border-bottom: cyan 1px solid;
-            color: cyan;
+            background-color:#1890ff;
+            border-bottom: white 1px solid;
+            color:black;
             top: 1em;
         }
     }
@@ -28,6 +28,6 @@
     position: absolute;
     right: 1px;
     &:hover{
-        border-bottom: cyan 1px solid;
+        border-bottom: white 1px solid;
     }
 }
