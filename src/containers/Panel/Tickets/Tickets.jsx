@@ -4,6 +4,7 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import { Form, Input, Button, notification, Switch } from 'antd';
 import './Tickets.scss';
 
+import { TimePicker } from 'antd';
 import { DatePicker } from 'antd';
 import axios from 'axios';
 import {
@@ -12,11 +13,13 @@ import {
     FileOutlined,
     UserOutlined,
   } from '@ant-design/icons';
+import TextArea from 'antd/lib/input/TextArea';
 
+const { RangePicker } = TimePicker;
 const {  Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
-const layout = {
+/* const layout = {
   labelCol: {
       span: 9,
   },
@@ -29,7 +32,7 @@ const tailLayout = {
       offset: 8,
       span: 9,
   },
-};
+}; */
 
 
 const Tickets = ({ user }) => {
@@ -38,6 +41,7 @@ const Tickets = ({ user }) => {
         let ticket = {
             'status': ticketData.status,
             'date': ticketData.date,
+            'hour': ticketData.hour,
             'observations': ticketData.observations,
             'text': ticketData.text,
             'dni': user.dni
@@ -95,16 +99,14 @@ const Tickets = ({ user }) => {
               Create a Ticket for Support
               <Layout>
         
-      <h5 style={{ textAlign: 'center', display: 'flex',  width: 200 ,justifyContent: 'center', color: 'white' }}>Bienvenido {user?.email}</h5>
+        <h4 className="wMen">Welcome {user?.email}</h4>
 
        <Layout>
        <Content style={{display: 'flex', justifyContent: 'center'}}>
       <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '30px', justifyContent: 'center'}}>
       
-      
-       
         <Form
-            {...layout}
+            /* {...layout} */
             name="basic"
             initialValues={{
                 remember: true,
@@ -129,6 +131,31 @@ const Tickets = ({ user }) => {
                 </Form.Item>
 
                 <Form.Item
+                label="Elija fecha"
+                name="date"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Por favor elija fecha',
+                    }
+                ]}
+                >
+                <DatePicker />
+                </Form.Item>
+
+                <Form.Item
+                label="Elija hora"
+                name="hour"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Elija hora disponible',
+                    }
+                ]}
+                >
+                <RangePicker />
+                </Form.Item>
+                <Form.Item
                 label="Error"
                 name="observations"
                 rules={[
@@ -141,18 +168,6 @@ const Tickets = ({ user }) => {
                 <Input />
                 </Form.Item>
 
-            <Form.Item
-                label="Elija fecha"
-                name="date"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor elija fecha',
-                    }
-                ]}
-            >
-              <DatePicker />
-            </Form.Item>
 
             <Form.Item
                 label="Text"
@@ -164,10 +179,10 @@ const Tickets = ({ user }) => {
                     },
                 ]}
                 >
-            <Input />
+            <TextArea />
             </Form.Item>
 
-            <Form.Item {...tailLayout}>
+            <Form.Item /* {...tailLayout} */>
                 <Button type="primary" htmlType="submit">
                     Create
                 </Button>

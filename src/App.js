@@ -49,6 +49,7 @@ function App() {
       <Route path='/' component={Home} exact />
       <Route path='/login' exact ><Login setUser={setUser} /></Route>
       <Route path='/register' component={Register} exact />
+      {/* Logout */}
       </Switch>
 
       <Footer />
