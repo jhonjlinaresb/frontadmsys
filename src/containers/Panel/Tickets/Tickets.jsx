@@ -103,7 +103,7 @@ const Tickets = ({ user }) => {
 
        <Layout>
        <Content>
-      <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '30px', justifyContent: 'center'}}>
+      <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '10px', justifyContent: 'center'}}>
       
         <Form
             /* {...layout} */

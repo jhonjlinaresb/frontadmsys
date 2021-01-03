@@ -1,6 +1,9 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import './Profile.scss'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Table, Space, Col } from 'antd';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
@@ -16,28 +19,27 @@ const { SubMenu } = Menu;
 
   const Profile = ({ user }) => {
 
-    /* const onFinish = (appointmentData) => {
-        let appoinment = {
-            'status': appointmentData.status,
-            'date':appointmentData.date,
-            'observations': appointmentData.observations,
-            'dentist': appointmentData.dentist,
-            'dni': user.dni
-        }
-        console.log('appointment: '+JSON.stringify(appoinment));
-        console.log('user: '+JSON.stringify(user));
-        axios.post(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/appoinments', appoinment)
-            .then(res => {
-                console.log(res.data)
-                notification.success({ message :'Cita creada correctamente',description:'Cita creada'})
-            }).catch(error => {
-                notification.error({ message: 'Error al crear cita', description: 'Hubo un error al crear cita' })
-            })
-    };
-
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);  
-    }; */
+    
+      //console.log(JSON.stringify(user));
+      const [tickets, setTickets] = useState([]);
+      useEffect(() => {
+          
+              console.log(JSON.stringify(user));
+              console.log('path tickets : '+process.env.REACT_APP_BASE_URL+user.user.dni+'/tickets')
+              axios.get(process.env.REACT_APP_BASE_URL+'/users/'+user.user.dni+'/tickets',{})
+              .then(res=>setTickets(res.data.ticket));
+  
+          
+      }, [])
+      
+  const deleteTicket = (dni) => {
+    console.log(dni);
+      axios.delete(process.env.REACT_APP_BASE_URL+dni+'/tickets',{})
+      .then(res=>setTickets(res.data.ticket));
+  }
+  
+  
+  const { Column, ColumnGroup } = Table;
     
     
     return (
@@ -67,18 +69,7 @@ const { SubMenu } = Menu;
           </Menu>
           
         </Sider>
-        
-        {/* <Layout className="site-layout">
-              <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Modify</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Modify Profile
-            </div>
-          </Content>
-        </Layout> */}
+
         <div>
             <nav>
            <Layout className="site-layout">
@@ -89,6 +80,29 @@ const { SubMenu } = Menu;
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, width: 1000, minHeight: 480 }}>
               View Tickets
+              <Table dataSource={tickets}>
+    <ColumnGroup title="Tickets">
+      
+    <Column title="Status" dataIndex="status" key='status' />
+    <Column title="Date" dataIndex="date" key='date' />
+    <Column title="Hour" dataIndex="timestamp" key='hour' />
+    <Column title="Observations" dataIndex="observations" key='observations' />
+    <Column title="Text" dataIndex="text" key='text' />
+    <Column title="DNI" dataIndex="dni" key='dni' />
+    </ColumnGroup>
+
+    
+    <Column
+      title="Action"
+      key="action"
+      render={(dni) => (
+        <Space size="middle">
+          <a onClick={() => deleteTicket(user.user.dni)}>Delete</a>
+        </Space>
+      )}
+    />
+  </Table>
+
             </div>
           </Content>
         </Layout>
