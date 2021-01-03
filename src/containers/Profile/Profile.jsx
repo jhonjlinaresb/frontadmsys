@@ -34,7 +34,7 @@ const { SubMenu } = Menu;
       
   const deleteOne = (dni) => {
     console.log(dni);
-      axios.delete(process.env.REACT_APP_BASE_URL+dni+'/tickets',{})
+      axios.delete(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets',{})
       .then(res=>userTickets(res.data.ticket));
   }
   
@@ -95,9 +95,9 @@ const { SubMenu } = Menu;
     <Column
       title="Action"
       key="action"
-      render={(dni) => (
+      render={(id) => (
         <Space size="middle">
-          <a onClick={() => deleteOne(user.user.dni)}>Delete</a>
+          <a onClick={() => deleteOne(user.id)}>Delete</a>
         </Space>
       )}
     />
