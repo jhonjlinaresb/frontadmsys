@@ -102,7 +102,7 @@ const Tickets = ({ user }) => {
         <h4 className="wMen">Welcome {user?.email}</h4>
 
        <Layout>
-       <Content style={{display: 'flex', justifyContent: 'center'}}>
+       <Content>
       <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '30px', justifyContent: 'center'}}>
       
         <Form
@@ -117,6 +117,7 @@ const Tickets = ({ user }) => {
         >
 
             <Form.Item
+            className="status"
                 label="Status"
                 name="status"
                 rules={[
@@ -131,6 +132,7 @@ const Tickets = ({ user }) => {
                 </Form.Item>
 
                 <Form.Item
+                className="date"
                 label="Elija fecha"
                 name="date"
                 rules={[

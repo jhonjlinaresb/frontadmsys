@@ -1,3 +1,7 @@
+Content{display: 'flex';
+         justify-content: 'justifiy';
+}
+
 .wMen{
     text-align: 'center'; 
     background: #1890ff;
@@ -5,4 +9,26 @@
     width: '400'; 
     color: 'black'; 
     justify-content: 'center';
+}
+
+Form{
+    background: #c2c2c2;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}.status{
+    display: flex;
+    height: 50px;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.date{
+    display: flex;
+    position: relative;
+    text-align: justify;
 }
