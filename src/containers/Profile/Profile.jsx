@@ -21,21 +21,21 @@ const { SubMenu } = Menu;
 
     
       //console.log(JSON.stringify(user));
-      const [tickets, setTickets] = useState([]);
+      const [tickets, userTickets] = useState([]);
       useEffect(() => {
           
               console.log(JSON.stringify(user));
-              console.log('path tickets : '+process.env.REACT_APP_BASE_URL+user.user.dni+'/tickets')
-              axios.get(process.env.REACT_APP_BASE_URL+'/users/'+user.user.dni+'/tickets',{})
-              .then(res=>setTickets(res.data.ticket));
+              console.log('path tickets : '+process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets')
+              axios.get(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets',{})
+              .then(res=>userTickets(res.data.ticket));
   
           
       }, [])
       
-  const deleteTicket = (dni) => {
+  const deleteOne = (dni) => {
     console.log(dni);
       axios.delete(process.env.REACT_APP_BASE_URL+dni+'/tickets',{})
-      .then(res=>setTickets(res.data.ticket));
+      .then(res=>userTickets(res.data.ticket));
   }
   
   
@@ -97,7 +97,7 @@ const { SubMenu } = Menu;
       key="action"
       render={(dni) => (
         <Space size="middle">
-          <a onClick={() => deleteTicket(user.user.dni)}>Delete</a>
+          <a onClick={() => deleteOne(user.user.dni)}>Delete</a>
         </Space>
       )}
     />
