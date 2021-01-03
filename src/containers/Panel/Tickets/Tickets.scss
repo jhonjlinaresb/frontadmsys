@@ -7,12 +7,12 @@ Content{display: 'flex';
     background: #1890ff;
     display: 'flex'; 
     width: '400'; 
-    color: 'black'; 
+    color: 'white'; 
     justify-content: 'center';
 }
 
 Form{
-    background: #c2c2c2;
+    background: #e3e4e5;
     height: 400px;
     width: 100%;
     display: flex;
@@ -20,8 +20,6 @@ Form{
 
 }.status{
     display: flex;
-    height: 50px;
-    width: 70px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -29,6 +27,7 @@ Form{
 
 .date{
     display: flex;
-    position: relative;
-    text-align: justify;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
