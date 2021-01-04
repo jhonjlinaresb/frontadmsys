@@ -105,7 +105,7 @@ const Tickets = ({ user }) => {
        <Content>
       <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '10px', justifyContent: 'center'}}>
       
-        <Form
+        <Form className="formticket"
             /* {...layout} */
             name="basic"
             initialValues={{
@@ -155,7 +155,7 @@ const Tickets = ({ user }) => {
                     }
                 ]}
                 >
-                <RangePicker />
+                <TimePicker />
                 </Form.Item>
                 <Form.Item
                 label="Error"
