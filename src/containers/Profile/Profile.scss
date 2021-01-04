@@ -5,10 +5,12 @@
   }
   
   .site-layout .site-layout-background {
-    background: #fff;
     width: 100%;
-    
+    background: #e3e4e5;
+    height: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
-Content{
-  width: 100%;
-}

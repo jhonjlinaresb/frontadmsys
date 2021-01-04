@@ -15,7 +15,7 @@ import {
   } from '@ant-design/icons';
 import TextArea from 'antd/lib/input/TextArea';
 
-const { RangePicker } = TimePicker;
+//const { TimePicker } = TimePicker;
 const {  Sider, Content } = Layout;
 const { SubMenu } = Menu;
 

@@ -72,14 +72,14 @@ const { SubMenu } = Menu;
         </Sider>
 
         <div>
-            <nav>
            <Layout className="site-layout">
             <Content id="cont1" style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Panel</Breadcrumb.Item>
               <Breadcrumb.Item>Tickets</Breadcrumb.Item>
             </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, width: 1000, minHeight: 480 }}>
+            
+            <div className="site-layout-background">
               View Tickets
               <Table dataSource={tickets}>
     <ColumnGroup title="Tickets">
@@ -108,7 +108,6 @@ const { SubMenu } = Menu;
             </div>
           </Content>
         </Layout>
-        </nav>
         </div>
         
       </Layout>
