@@ -11,6 +11,7 @@ import {
   PieChartOutlined,
   FileOutlined,
   UserOutlined,
+  SyncOutlined,
 } from '@ant-design/icons';
 
 const { Content, Sider } = Layout;
@@ -83,16 +84,17 @@ const { SubMenu } = Menu;
               <Table dataSource={tickets}>
     <ColumnGroup title="Tickets">
       
-    <Column title="Status" dataIndex="status" key='status' />
+    <Column title="Status" dataIndex="status" key='status'
+    render={() => (<SyncOutlined spin />)} />
     <Column title="Date" dataIndex="date" key='date' />
-    <Column title="Hour" dataIndex="timestamp" key='hour' />
-    <Column title="Observations" dataIndex="observations" key='observations' />
+    <Column title="Hour" dataIndex="date" key='hour' />
+    <Column title="Error" dataIndex="observations" key='observations' />
     <Column title="Text" dataIndex="text" key='text' />
     <Column title="DNI" dataIndex="dni" key='dni' />
     </ColumnGroup>
 
     
-    <Column
+    {/* <Column
       title="Action"
       key="action"
       render={(id) => (
@@ -100,7 +102,7 @@ const { SubMenu } = Menu;
           <a onClick={() => deleteOne(user.id)}>Delete</a>
         </Space>
       )}
-    />
+    /> */}
   </Table>
 
             </div>
