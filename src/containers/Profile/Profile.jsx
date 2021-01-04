@@ -4,6 +4,7 @@ import './Profile.scss'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table, Space, Col } from 'antd';
+import { Redirect } from 'react-router-dom';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
@@ -33,9 +34,9 @@ const { SubMenu } = Menu;
           
       }, [])
       
-  const deleteOne = (dni) => {
-    console.log(dni);
-      axios.delete(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets',{})
+  const deleteOne = (_id) => {
+    console.log(_id);
+      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+_id,{})
       .then(res=>userTickets(res.data.ticket));
   }
   
@@ -87,22 +88,22 @@ const { SubMenu } = Menu;
     <Column title="Status" dataIndex="status" key='status'
     render={() => (<SyncOutlined spin />)} />
     <Column title="Date" dataIndex="date" key='date' />
-    <Column title="Hour" dataIndex="date" key='hour' />
+    <Column title="Hour" dataIndex="hour" key='hour' />
     <Column title="Error" dataIndex="observations" key='observations' />
     <Column title="Text" dataIndex="text" key='text' />
     <Column title="DNI" dataIndex="dni" key='dni' />
     </ColumnGroup>
 
     
-    {/* <Column
+    <Column
       title="Action"
       key="action"
-      render={(id) => (
+      render={(_id) => (
         <Space size="middle">
-          <a onClick={() => deleteOne(user.id)}>Delete</a>
+          <a onClick={() => deleteOne(user._id)}>Delete</a>
         </Space>
       )}
-    /> */}
+    />
   </Table>
 
             </div>
