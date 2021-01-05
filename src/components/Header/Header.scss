@@ -31,3 +31,16 @@
         border-bottom: white 1px solid;
     }
 }
+
+.loggedIn{
+    color: white;
+    display: flex;
+    position: absolute;
+    right: 1px;
+    &:hover{
+        border-bottom: white 1px solid;
+    }
+}
+.logout{
+    color: red;
+}

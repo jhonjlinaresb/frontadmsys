@@ -12,10 +12,10 @@ import axios from 'axios';
 import Profile from './containers/Profile/Profile';
 import Tickets from './containers/Panel/Tickets/Tickets';
 import ViewUser from './containers/ViewUser/ViewUser';
-//import PrivateZone from './guards/PrivateZone';
-//import Error404 from './containers/Error404/Error404.jsx';
-//import UserList from './containers/UserList/UserList';
-//import CheckPrivileges from './guards/CheckPrivileges';
+import PrivateZone from './guards/PrivateZone';
+import Error404 from './containers/Error404/Error404.jsx';
+import Users from './containers/Users/Users';
+import CheckPrivileges from './guards/CheckPrivileges';
 function App() {
 
   console.log(process.env.REACT_APP_BASE_URL);
@@ -51,6 +51,15 @@ function App() {
       <Route path='/login' exact ><Login setUser={setUser} /></Route>
       <Route path='/register' component={Register} exact />
       
+      <PrivateZone user={user}>
+        
+        <CheckPrivileges user={user} roles={['admin']}>
+          <Route path='/users' component={Users} exact />
+        </CheckPrivileges>
+        
+        
+        </PrivateZone>
+        <Route path='/*' component={Error404} exact />
       </Switch>
 
       <Footer />

@@ -40,7 +40,7 @@ const { Meta } = Card;
               Create Ticket <Link to="/tickets"/>
             </Menu.Item>
 
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+            <SubMenu key="sub1" defaultSelected="true" icon={<UserOutlined />} title="User">
               <Menu.Item key="3">
 		        View <Link to="viewuser"/>
 	          </Menu.Item>
@@ -66,10 +66,11 @@ const { Meta } = Card;
               <Card
                 hoverable
                 style={{ width: 800 }} 
-              ><Meta title={<UserOutlined />} description={user?.name}/><hr/>
-              <Meta title={<MailOutlined />} description={user?.email} /><hr/>
-              <Meta title={<IdcardOutlined />} description={user.dni} /><hr/>
-              <Meta title={<RightSquareOutlined />} description={user._id} />
+              >
+              <Meta title={<p><UserOutlined />Name: {user?.name}</p>} description={user?.name}/><hr/>
+              <Meta title={<p><MailOutlined />Email: {user?.email}</p>} description={user?.email} /><hr/>
+              <Meta title={<p><IdcardOutlined />DNI: {user.dni}</p>} description={user.dni} /><hr/>
+              <Meta title={<p><RightSquareOutlined />ID= {user._id}</p>} description={user._id} />
               </Card>
 
             </div>
