@@ -1,10 +1,8 @@
-
 import { Link } from 'react-router-dom';
 import './Profile.scss'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table, Space, Col } from 'antd';
-import { Redirect } from 'react-router-dom';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
@@ -62,9 +60,12 @@ const { SubMenu } = Menu;
             </Menu.Item>
 
             <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">View</Menu.Item>
+              <Menu.Item key="3">
+		            View <Link to="viewuser"/>
+	            </Menu.Item>
               <Menu.Item key="4">Modify</Menu.Item>
             </SubMenu>
+
             <Menu.Item key="9" icon={<FileOutlined />}>
               Files
             </Menu.Item>
@@ -114,7 +115,6 @@ const { SubMenu } = Menu;
       </Layout>
     </>);
   }
-
 
 
 export default Profile;

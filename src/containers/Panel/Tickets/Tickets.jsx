@@ -79,7 +79,9 @@ const Tickets = ({ user }) => {
             </Menu.Item>
 
             <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">View</Menu.Item>
+              <Menu.Item key="3">
+		        View <Link to="viewuser"/>
+	          </Menu.Item>
               <Menu.Item key="4">Modify</Menu.Item>
             </SubMenu>
             <Menu.Item key="9" icon={<FileOutlined />}>

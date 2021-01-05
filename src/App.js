@@ -11,7 +11,7 @@ import Register from './containers/Register/Register';
 import axios from 'axios';
 import Profile from './containers/Profile/Profile';
 import Tickets from './containers/Panel/Tickets/Tickets';
-//import Appointments from './containers/Appointments/Appointments';
+import ViewUser from './containers/ViewUser/ViewUser';
 //import PrivateZone from './guards/PrivateZone';
 //import Error404 from './containers/Error404/Error404.jsx';
 //import UserList from './containers/UserList/UserList';
@@ -46,6 +46,7 @@ function App() {
       <Switch>
       <Route path='/profile' exact><Profile user={user} /></Route>
       <Route path='/tickets' exact><Tickets user={user} /></Route>
+      <Route path='/viewuser' exact><ViewUser user={user} /></Route>
       <Route path='/' component={Home} exact />
       <Route path='/login' exact ><Login setUser={setUser} /></Route>
       <Route path='/register' component={Register} exact />
