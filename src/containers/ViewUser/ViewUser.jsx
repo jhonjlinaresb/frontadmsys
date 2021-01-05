@@ -9,7 +9,8 @@ import {
   FileOutlined,
   UserOutlined,
   MailOutlined,
-  SyncOutlined,
+  IdcardOutlined,
+  RightSquareOutlined
 } from '@ant-design/icons';
 
 const { Content, Sider } = Layout;
@@ -65,10 +66,10 @@ const { Meta } = Card;
               <Card
                 hoverable
                 style={{ width: 800 }} 
-              ><Meta title={<UserOutlined />} description={user?.name}/>
-              <Meta title={<MailOutlined />} description={user?.email} />
-              <Meta title={<MailOutlined />} description={user.dni} />
-              <Meta title={<MailOutlined />} description={user._id} />
+              ><Meta title={<UserOutlined />} description={user?.name}/><hr/>
+              <Meta title={<MailOutlined />} description={user?.email} /><hr/>
+              <Meta title={<IdcardOutlined />} description={user.dni} /><hr/>
+              <Meta title={<RightSquareOutlined />} description={user._id} />
               </Card>
 
             </div>
