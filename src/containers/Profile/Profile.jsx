@@ -34,7 +34,7 @@ const { SubMenu } = Menu;
       
   const deleteOne = (_id) => {
     console.log(_id);
-      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+_id,{})
+      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+Map._id,{})
       .then(res=>userTickets(res.data.ticket));
   }
   
