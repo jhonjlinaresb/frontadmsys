@@ -5,7 +5,7 @@ import { Table, Space } from 'antd';
 const Users = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        const token = localStorage.getItem('authToken');
+        //const token = localStorage.getItem('authToken');
         axios.get(process.env.REACT_APP_BASE_URL+'/users/showAll',{
             
         }).then(res=>setUsers(res.data));
