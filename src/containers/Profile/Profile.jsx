@@ -32,10 +32,12 @@ const { SubMenu } = Menu;
           
       }, [])
       
-  const deleteOne = (_id) => {
-    console.log(_id);
-      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+Map._id,{})
-      .then(res=>userTickets(res.data.ticket));
+  const deleteOne = ( ObjectId ) => {
+    console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets'+'/:'+ObjectId)
+      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+[ObjectId],{})
+      .then(res=>userTickets(res.data.ObjectId));
+    
+      console.log(ObjectId);
   }
   
   
@@ -99,9 +101,11 @@ const { SubMenu } = Menu;
     <Column
       title="Action"
       key="action"
-      render={(_id) => (
+      render={(ObjectId) => (
         <Space size="middle">
-          <a onClick={() => deleteOne(user._id)}>Delete</a>
+          <button onClick={() => deleteOne(ObjectId)}>Cancell</button>
+          
+          {/* <a onClick={() => deleteOne(ObjectId)}>Delete</a> */}
         </Space>
       )}
     />

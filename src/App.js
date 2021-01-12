@@ -54,7 +54,7 @@ function App() {
       <PrivateZone user={user}>
         
         <CheckPrivileges user={user} roles={['admin']}>
-          <Route path='/users' component={Users} exact />
+          <Route path='/users' exact><Users user={Users}/></Route>
         </CheckPrivileges>
         
         

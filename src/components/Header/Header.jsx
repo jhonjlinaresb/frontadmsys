@@ -10,6 +10,7 @@ import './Header.scss';
         // props.setUser(null)
         setUser(null)
     }
+    //if(LoggedIn){}
     return (
         <header className="header">
             <Link to="/">Home</Link>
