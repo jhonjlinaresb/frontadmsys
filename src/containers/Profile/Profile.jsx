@@ -101,6 +101,7 @@ const { SubMenu } = Menu;
     
             <Column
               title="Action"
+              dataIndex="deleteOne"
               key="action"
               render={(_id) => (
                   <button onClick={() => deleteOne(_id)}>Cancell</button>
