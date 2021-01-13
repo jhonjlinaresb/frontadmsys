@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './Profile.scss'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Table, Space, Col } from 'antd';
+import { Table, Pagination, Col } from 'antd';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
@@ -32,12 +32,12 @@ const { SubMenu } = Menu;
           
       }, [])
       
-  const deleteOne = ( ObjectId ) => {
-    console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets'+'/:'+ObjectId)
-      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+[ObjectId],{})
-      .then(res=>userTickets(res.data.ObjectId));
+  const deleteOne = ( _id ) => {
+    console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+tickets.id)
+      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+_id,{})
+      .then(res=>userTickets(res.data._id));
     
-      console.log(ObjectId);
+      console.log(_id);
   }
   
   
@@ -85,32 +85,32 @@ const { SubMenu } = Menu;
             
             <div className="site-layout-background">
               View Tickets
+              <Col>
               <Table dataSource={tickets}>
-    <ColumnGroup title="Tickets">
-      
-    <Column title="Status" dataIndex="status" key='status'
-    render={() => (<SyncOutlined spin />)} />
-    <Column title="Date" dataIndex="date" key='date' />
-    <Column title="Hour" dataIndex="hour" key='hour' />
-    <Column title="Error" dataIndex="observations" key='observations' />
-    <Column title="Text" dataIndex="text" key='text' />
-    <Column title="DNI" dataIndex="dni" key='dni' />
-    </ColumnGroup>
+                  <ColumnGroup title="Tickets">
+                    
+                  <Column title="Status" dataIndex="status" key='status'
+                  render={() => (<SyncOutlined spin />)} />
+                  <Column title="Date" dataIndex="date" key='date' />
+                  <Column title="Hour" dataIndex="hour" key='hour' />
+                  <Column title="Error" dataIndex="observations" key='observations' />
+                  <Column title="Text" dataIndex="text" key='text' />
+                  <Column title="DNI" dataIndex="dni" key='dni' />
+                  </ColumnGroup>
 
     
-    <Column
-      title="Action"
-      key="action"
-      render={(ObjectId) => (
-        <Space size="middle">
-          <button onClick={() => deleteOne(ObjectId)}>Cancell</button>
-          
-          {/* <a onClick={() => deleteOne(ObjectId)}>Delete</a> */}
-        </Space>
-      )}
-    />
-  </Table>
-
+            <Column
+              title="Action"
+              key="action"
+              render={(_id) => (
+                  <button onClick={() => deleteOne(_id)}>Cancell</button>
+                
+              )}
+            />
+            <Pagination defaultCurrent={1} total={3} />
+          </Table>
+          </Col>
+  
             </div>
           </Content>
         </Layout>

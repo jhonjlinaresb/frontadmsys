@@ -19,13 +19,14 @@
     }
     .logout {
         cursor: pointer;
+        
     }
     
 }
 .notLoggedIn{
     color: white;
     display: flex;
-    position: absolute;
+    position: fixed;
     right: 1px;
     &:hover{
         border-bottom: white 1px solid;
@@ -35,12 +36,13 @@
 .loggedIn{
     color: white;
     display: flex;
-    position: absolute;
-    right: 1px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: fixed;
+    right: 5px;
     &:hover{
         border-bottom: white 1px solid;
+    }#notLoggedIn{
+        display: none;
     }
-}
-.logout{
-    color: red;
 }
