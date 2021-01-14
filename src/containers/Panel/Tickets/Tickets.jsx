@@ -10,7 +10,9 @@ import axios from 'axios';
 import {
     DesktopOutlined,
     PieChartOutlined,
-    FileOutlined,
+    EyeOutlined,
+    PoweroffOutlined,
+    KeyOutlined,
     UserOutlined,
   } from '@ant-design/icons';
 import TextArea from 'antd/lib/input/TextArea';
@@ -18,21 +20,6 @@ import TextArea from 'antd/lib/input/TextArea';
 //const { TimePicker } = TimePicker;
 const {  Sider, Content } = Layout;
 const { SubMenu } = Menu;
-
-/* const layout = {
-  labelCol: {
-      span: 9,
-  },
-  wrapperCol: {
-      span: 8,
-  },
-};
-const tailLayout = {
-  wrapperCol: {
-      offset: 8,
-      span: 9,
-  },
-}; */
 
 
 const Tickets = ({ user }) => {
@@ -78,14 +65,17 @@ const Tickets = ({ user }) => {
               Create Ticket <Link to="/tickets"/>
             </Menu.Item>
 
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">
+            <SubMenu key="sub1" defaultSelected="true" icon={<UserOutlined />} title="User">
+              <Menu.Item key="3" icon={<EyeOutlined />}>
 		        View <Link to="viewuser"/>
 	          </Menu.Item>
-              <Menu.Item key="4">Modify</Menu.Item>
+              <Menu.Item key="4" icon={<PoweroffOutlined />}>
+                Logout <Link to="/" />
+                </Menu.Item>
             </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              Files
+
+            <Menu.Item key="9" icon={<KeyOutlined />}>
+              Admin <Link to="/admin" />
             </Menu.Item>
           </Menu>
           

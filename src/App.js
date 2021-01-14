@@ -17,6 +17,7 @@ import ShowTickets from './containers/ShowTickets/ShowTickets';
 import PrivateZone from './guards/PrivateZone';
 import Error404 from './containers/Error404/Error404.jsx';
 import Users from './containers/Users/Users';
+import Admin from './containers/Admin/Admin';
 import CheckPrivileges from './guards/CheckPrivileges';
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
         <CheckPrivileges user={user} roles={['admin']}>
           <Route path='/users' exact><Users user={Users}/></Route>
           <Route path='/showtickets' exact><ShowTickets tickets={ShowTickets}/></Route>
+          <Route path='/admin' exact><Admin user={Admin}/></Route>
         </CheckPrivileges>
         
         

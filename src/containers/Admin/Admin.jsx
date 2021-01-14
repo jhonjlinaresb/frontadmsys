@@ -4,22 +4,19 @@ import { Link } from 'react-router-dom';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
-  DesktopOutlined,
-  PieChartOutlined,
-  EyeOutlined,
-  PoweroffOutlined,
-  KeyOutlined,
-  UserOutlined,
-  MailOutlined,
-  IdcardOutlined,
-  RightSquareOutlined
+    DesktopOutlined,
+    PieChartOutlined,
+    UserOutlined,
+    PoweroffOutlined,
+    EyeOutlined,
+    KeyOutlined,
 } from '@ant-design/icons';
 
 const { Content, Sider } = Layout;
 const { SubMenu } = Menu;
 const { Meta } = Card;
 
-  const ViewUser = ({ user }) => {
+  const Admin = ({ user }) => {
 
     
 
@@ -31,7 +28,7 @@ const { Meta } = Card;
         <Sider>
           <div className="logo" />
           
-          <Menu theme="dark" defaultSelectedKeys={['sub1','3']} mode="inline">
+          <Menu theme="dark" defaultSelectedKeys={['9']} mode="inline">
           
             <Menu.Item key="1" icon={<PieChartOutlined />}>
             View Tickets <Link to="/profile" /> 
@@ -62,8 +59,8 @@ const { Meta } = Card;
            <Layout className="site-layout">
             <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>View</Breadcrumb.Item>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
+              <Breadcrumb.Item>Admin</Breadcrumb.Item>
+              <Breadcrumb.Item>Administration</Breadcrumb.Item>
             </Breadcrumb>
             
             <div className="site-layout-background">
@@ -72,10 +69,7 @@ const { Meta } = Card;
                 hoverable
                 style={{ width: 800 }} 
               >
-              <Meta title={<p><UserOutlined />Name: {user?.name}</p>} description={user?.name}/><hr/>
-              <Meta title={<p><MailOutlined />Email: {user?.email}</p>} description={user?.email} /><hr/>
-              <Meta title={<p><IdcardOutlined />DNI: {user.dni}</p>} description={user.dni} /><hr/>
-              <Meta title={<p><RightSquareOutlined />ID= {user._id}</p>} description={user._id} />
+              <Meta title={<p><UserOutlined />Name: {user?.name}</p>} description={user?.name}/>
               </Card>
 
             </div>
@@ -88,4 +82,4 @@ const { Meta } = Card;
   }
 
 
-export default ViewUser;
+export default Admin;

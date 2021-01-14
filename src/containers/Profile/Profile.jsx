@@ -65,17 +65,17 @@ const { SubMenu } = Menu;
               Create Ticket <Link to="/tickets"/>
             </Menu.Item>
 
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+            <SubMenu key="sub1" defaultSelected="true" icon={<UserOutlined />} title="User">
               <Menu.Item key="3" icon={<EyeOutlined />}>
-		            View <Link to="/viewuser"/>
-	            </Menu.Item>
+		        View <Link to="viewuser"/>
+	          </Menu.Item>
               <Menu.Item key="4" icon={<PoweroffOutlined />}>
                 Logout <Link to="/" />
                 </Menu.Item>
             </SubMenu>
 
             <Menu.Item key="9" icon={<KeyOutlined />}>
-              Admin
+              Admin <Link to="/admin" />
             </Menu.Item>
           </Menu>
           
