@@ -7,8 +7,10 @@ import {
     DesktopOutlined,
     PieChartOutlined,
     UserOutlined,
+    TeamOutlined,
     PoweroffOutlined,
     EyeOutlined,
+    DatabaseOutlined,
     KeyOutlined,
 } from '@ant-design/icons';
 
@@ -64,13 +66,30 @@ const { Meta } = Card;
             </Breadcrumb>
             
             <div className="site-layout-background">
-              View User
+              Welcome
               <Card
                 hoverable
-                style={{ width: 800 }} 
+                style={{ width: 300 }} 
               >
-              <Meta title={<p><UserOutlined />Name: {user?.name}</p>} description={user?.name}/>
-              </Card>
+              <Meta title={<p><UserOutlined />{user?.name}</p>} description='Hola'/>
+              </Card><hr/>
+
+              <Link to="/users"><Card
+                hoverable
+                style={{ width: 400 }} 
+              >
+                <TeamOutlined />
+              <Meta title='All Users' description={user?.name}/>
+              
+              </Card></Link><hr/>
+
+              <Link to="/showtickets"><Card
+                hoverable
+                style={{ width: 500 }} 
+              >
+              <DatabaseOutlined />
+              <Meta title='All Tickets' description='Click here for view all tickets of users'/>
+              </Card></Link>
 
             </div>
           </Content>
