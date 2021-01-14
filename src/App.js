@@ -18,6 +18,7 @@ import PrivateZone from './guards/PrivateZone';
 import Error404 from './containers/Error404/Error404.jsx';
 import Users from './containers/Users/Users';
 import Admin from './containers/Admin/Admin';
+import Inventory from './containers/Inventory/Inventory'
 import CheckPrivileges from './guards/CheckPrivileges';
 function App() {
 
@@ -62,6 +63,7 @@ function App() {
           <Route path='/users' exact><Users user={Users}/></Route>
           <Route path='/showtickets' exact><ShowTickets tickets={ShowTickets}/></Route>
           <Route path='/admin' exact><Admin user={Admin}/></Route>
+          <Route path='/inventory' exact><Inventory user={Inventory}/></Route>
         </CheckPrivileges>
         
         

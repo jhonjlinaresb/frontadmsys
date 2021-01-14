@@ -1,6 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import { Table, Space } from 'antd';
+
+import {
+  CheckOutlined,
+  SyncOutlined,
+  ArrowLeftOutlined
+} from '@ant-design/icons';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -18,8 +25,9 @@ const Column = Table;
 
 
 return(
-    
-  <Table dataSource={users}>
+  <>
+  <Link style={{color: 'black', margin: '2px'}}to="/admin"><button><ArrowLeftOutlined />Back to Admin</button></Link>
+  <Table dataSource={users} pagination={{pageSize: 8}}>
       <Column title="User Id" dataIndex="_id" key='_id' />
       <Column title="Name" dataIndex="name" key="name" />
     <Column title="Email" dataIndex="email" key='email' />
@@ -35,6 +43,7 @@ return(
       )}
     />
   </Table>
+  </>
 );
     
     

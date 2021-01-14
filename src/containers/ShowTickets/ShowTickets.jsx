@@ -1,6 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom'
 import { Table, Space } from 'antd';
+
+import {
+  CheckOutlined,
+  SyncOutlined,
+  ArrowLeftOutlined
+} from '@ant-design/icons';
 
 const ShowTickets = ( ) => {
     const [ viewtickets, setTickets ] = useState([]);
@@ -10,13 +17,24 @@ const ShowTickets = ( ) => {
             
       }).then(res=>setTickets(res.data));
             }, [])
+      
+      const deleteOne = ( ObjectId ) => {
+      console.log(ObjectId);
+      let a = ObjectId._id;
+      console.log(a);
+      console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a)
+      axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a,{})
+      .then(res=>setTickets(res.data.a));
+       }
   
        const Column = Table;
 return (
     <>
-  <Table dataSource={viewtickets} pagination={{pageSize: 6}}>
+    <Link style={{color: 'black', margin: '2px'}}to="/admin"><button><ArrowLeftOutlined />Back to Admin</button></Link>
+    <Table dataSource={viewtickets} pagination={{pageSize: 8}}>
     <Column title="Ticket Id" dataIndex="_id" key='_id' />
-    <Column title="Status" dataIndex="status" key="status" />
+    <Column title="Status" dataIndex="status" key='status'
+    render={() => (<SyncOutlined spin />)} />
     <Column title="date" dataIndex="date" key='date' />
     <Column title="hour" dataIndex="hour" key='hour' />
     <Column title="Observations" dataIndex="observations" key='observations' />
@@ -25,15 +43,17 @@ return (
 
     
     <Column
-      title="Action"
-      key="action"
-      render={() => (
-        <Space size="middle">
-          <a>Delete</a>
-        </Space>
-      )}
-    />
+              title="Finish"
+              key="action"
+              render={(ObjectId) => (
+                  <a href="/showtickets">
+                  <button onClick={() => deleteOne(ObjectId)}><CheckOutlined /></button></a>
+                
+              )}
+            />
   </Table>
+  
+  
   </>
 );
 }

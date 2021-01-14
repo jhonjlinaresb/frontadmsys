@@ -42,7 +42,7 @@ const { Meta } = Card;
               Create Ticket <Link to="/tickets"/>
             </Menu.Item>
 
-            <SubMenu key="sub1" defaultSelected="true" icon={<UserOutlined />} title="User">
+            <SubMenu key="sub1" onClick="true" defaultSelected="true" icon={<UserOutlined />} title="User">
               <Menu.Item key="3" icon={<EyeOutlined />}>
 		        View <Link to="viewuser"/>
 	          </Menu.Item>

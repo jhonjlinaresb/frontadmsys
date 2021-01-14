@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Form, Input, Button, notification, Switch } from 'antd';
-import './Tickets.scss';
 
-import { TimePicker } from 'antd';
 import { DatePicker } from 'antd';
 import axios from 'axios';
 import {
@@ -15,45 +13,37 @@ import {
   } from '@ant-design/icons';
 import TextArea from 'antd/lib/input/TextArea';
 
-//const { TimePicker } = TimePicker;
 const {  Sider, Content } = Layout;
 const { SubMenu } = Menu;
-
-/* const layout = {
-  labelCol: {
-      span: 9,
-  },
-  wrapperCol: {
-      span: 8,
-  },
-};
-const tailLayout = {
-  wrapperCol: {
-      offset: 8,
-      span: 9,
-  },
-}; */
 
 
 const Inventory = ({ user }) => {
 
-    const onFinish = (ticketData) => {
-        let ticket = {
-            'status': ticketData.status,
-            'date': ticketData.date,
-            'hour': ticketData.hour,
-            'observations': ticketData.observations,
-            'text': ticketData.text,
-            'dni': user.dni
+    const onFinish = (inventoryData) => {
+        let inventory = {
+            'status': inventoryData.status,
+            'date': inventoryData.date,
+            'observations': inventoryData.observations,
+            'text': inventoryData.text,
+            'mark': inventoryData.mark,
+            'model': inventoryData.model,
+            'serial': inventoryData.serial,
+            'so': inventoryData.so,
+            'ram': inventoryData.ram,
+            'processor': inventoryData.processor,
+            'disk': inventoryData.disk,
+            'price': inventoryData.price,
+            'hdv': inventoryData.hdv,
+            'user': inventoryData.user
         }
-        console.log('tickett: '+JSON.stringify(ticket));
+        console.log('inventory: '+JSON.stringify(inventory));
         console.log('user: '+JSON.stringify(user));
-        axios.post(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets', ticket)
+        axios.post(process.env.REACT_APP_BASE_URL+'/:user/inventory', inventory)
             .then(res => {
                 console.log(res.data)
-                notification.success({ message :'Ticket Create Succesfuly',description:'Ticket Create'})
+                notification.success({ message :'Inventory Create Succesfuly',description:'Inventory Create'})
             }).catch(error => {
-                notification.error({ message: 'Error to create Ticket', description: 'Error to create' })
+                notification.error({ message: 'Error to create Inventory', description: 'Error to create' })
             })
     };
 
@@ -62,52 +52,11 @@ const Inventory = ({ user }) => {
     };
     return (
       <>
-      
-      <Layout style={{ minHeight: '90vh'}}>
-        <Sider>
-          <div className="logo" />
-          
-          <Menu theme="dark" defaultSelectedKeys={['2']} mode="inline">
-          
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
-            View Tickets <Link to="/profile" />
-            </Menu.Item>
-
-            
-            <Menu.Item  key="2" icon={<DesktopOutlined />}>
-              Create Ticket <Link to="/tickets"/>
-            </Menu.Item>
-
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">
-		        View <Link to="viewuser"/>
-	          </Menu.Item>
-              <Menu.Item key="4">Modify</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              Files
-            </Menu.Item>
-          </Menu>
-          
-        </Sider>
-    
-    <Layout className="site-layout">
-              <Content style={{ margin: '0 16px' }}>
-              <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Tickets</Breadcrumb.Item>
-              <Breadcrumb.Item>Create Ticket</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Create a Ticket for Support
-              <Layout>
-        
-        <h4 className="wMen">Welcome {user?.email}</h4>
-
        <Layout>
        <Content>
       <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '10px', justifyContent: 'center'}}>
       
-        <Form className="formticket"
+        <Form className="forminventory"
             /* {...layout} */
             name="basic"
             initialValues={{
@@ -148,19 +97,7 @@ const Inventory = ({ user }) => {
                 </Form.Item>
 
                 <Form.Item
-                label="Elija hora"
-                name="hour"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Elija hora disponible',
-                    }
-                ]}
-                >
-                <TimePicker />
-                </Form.Item>
-                <Form.Item
-                label="Error"
+                label="Observations"
                 name="observations"
                 rules={[
                     {
@@ -168,13 +105,12 @@ const Inventory = ({ user }) => {
                         message: 'Observaciones...',
                     },
                 ]}
-            >
-                <Input />
+                >
+                <Input placeholder="Your Observations" />
                 </Form.Item>
 
-
             <Form.Item
-                label="Text"
+                label="Notes"
                 name="text"
                 rules={[
                     {
@@ -185,6 +121,19 @@ const Inventory = ({ user }) => {
                 >
             <TextArea />
             </Form.Item>
+
+            <Form.Item
+                label="Mark"
+                name="mark"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Mark of computer',
+                    },
+                ]}
+                >
+                <Input placeholder="Lenovo" />
+                </Form.Item>
 
             <Form.Item /* {...tailLayout} */>
                 <Button type="primary" htmlType="submit">
@@ -198,13 +147,6 @@ const Inventory = ({ user }) => {
             </div>
         </Content>
         </Layout>
-        </Layout>
-  
-            </div>
-          </Content>
-        </Layout>
-        </Layout>
     </>
-);
-}
-export default Tickets;
+);}
+export default Inventory;

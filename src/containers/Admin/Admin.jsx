@@ -10,6 +10,7 @@ import {
     TeamOutlined,
     PoweroffOutlined,
     EyeOutlined,
+    ClusterOutlined,
     DatabaseOutlined,
     KeyOutlined,
 } from '@ant-design/icons';
@@ -66,12 +67,14 @@ const { Meta } = Card;
             </Breadcrumb>
             
             <div className="site-layout-background">
-              Welcome
+              Welcome {user?.name}
               <Card
                 hoverable
                 style={{ width: 300 }} 
               >
-              <Meta title={<p><UserOutlined />{user?.name}</p>} description='Hola'/>
+              <Meta title={<p><ClusterOutlined />Inventory</p>} description='You have admin of Inventory'/>
+              <button>Create</button>
+              <button>View</button>
               </Card><hr/>
 
               <Link to="/users"><Card
