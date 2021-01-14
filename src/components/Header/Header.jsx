@@ -8,16 +8,17 @@ import './Header.scss';
     const logout = () => {
         localStorage.clear();
          props.setUser(null)
+    
     }
     return (
         <header className="header">
             <Link to="/">Home</Link>
             {props.user ?
-                        <div className="loggedIn">
+                <div className="loggedIn">
                             { !props.user.admin 
                             ?<Link to ="/profile" className="margin">Profile</Link>
                             :<Link to ="/administration" className="margin">Administration</Link>}
-                            <span><Link to ="/" className="margin" onClick={logout}>Logout</Link></span>
+                            <Link to ="/" className="logout" onClick={logout}>Logout</Link>
                 </div> :
                 <div className="notLoggedIn">
                     <Link to="/login">Login</Link>

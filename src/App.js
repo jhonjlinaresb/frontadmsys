@@ -3,6 +3,7 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import logout from './components/Header/Header';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 //import Logout from './containers/Logout/Logout';
@@ -12,6 +13,7 @@ import axios from 'axios';
 import Profile from './containers/Profile/Profile';
 import Tickets from './containers/Panel/Tickets/Tickets';
 import ViewUser from './containers/ViewUser/ViewUser';
+import ShowTickets from './containers/ShowTickets/ShowTickets';
 import PrivateZone from './guards/PrivateZone';
 import Error404 from './containers/Error404/Error404.jsx';
 import Users from './containers/Users/Users';
@@ -26,6 +28,7 @@ function App() {
   } catch (error) {
     console.error(error);
   }
+
   const [user, setUser] = useState(initialUser);
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -50,11 +53,13 @@ function App() {
       <Route path='/' component={Home} exact />
       <Route path='/login' exact ><Login setUser={setUser} /></Route>
       <Route path='/register' component={Register} exact />
+      <Route path='/' component={logout} exact />
       
       <PrivateZone user={user}>
         
         <CheckPrivileges user={user} roles={['admin']}>
           <Route path='/users' exact><Users user={Users}/></Route>
+          <Route path='/ShowTickets' exact><ShowTickets tickets={ShowTickets}/></Route>
         </CheckPrivileges>
         
         

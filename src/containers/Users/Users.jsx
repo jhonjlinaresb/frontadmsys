@@ -5,7 +5,7 @@ import { Table, Space } from 'antd';
 const Users = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        //const token = localStorage.getItem('authToken');
+        const token = localStorage.getItem('authToken');
         axios.get(process.env.REACT_APP_BASE_URL+'/users/showAll',{
             
         }).then(res=>setUsers(res.data));
@@ -13,16 +13,15 @@ const Users = () => {
 
     
 
-const { Column, ColumnGroup } = Table;
+const Column = Table;
 
 
 
 return(
     
   <Table dataSource={users}>
-    <ColumnGroup title="User List">
-      <Column title="id" dataIndex="id" key='_id' />
-    </ColumnGroup>
+      <Column title="User Id" dataIndex="_id" key='_id' />
+      <Column title="Name" dataIndex="name" key="name" />
     <Column title="Email" dataIndex="email" key='email' />
     <Column title="DNI" dataIndex="dni" key='dni' />
     

@@ -10,6 +10,9 @@ import {
   PieChartOutlined,
   FileOutlined,
   UserOutlined,
+  PoweroffOutlined,
+  EyeOutlined,
+  KeyOutlined,
   SyncOutlined,
 } from '@ant-design/icons';
 
@@ -19,8 +22,6 @@ const { SubMenu } = Menu;
 
   const Profile = ({ user }) => {
 
-    
-      //console.log(JSON.stringify(user));
       const [tickets, userTickets] = useState([]);
       useEffect(() => {
           
@@ -65,14 +66,16 @@ const { SubMenu } = Menu;
             </Menu.Item>
 
             <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">
-		            View <Link to="viewuser"/>
+              <Menu.Item key="3" icon={<EyeOutlined />}>
+		            View <Link to="/viewuser"/>
 	            </Menu.Item>
-              <Menu.Item key="4">Modify</Menu.Item>
+              <Menu.Item key="4" icon={<PoweroffOutlined />}>
+                Logout <Link to="/" />
+                </Menu.Item>
             </SubMenu>
 
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              Files
+            <Menu.Item key="9" icon={<KeyOutlined />}>
+              Admin
             </Menu.Item>
           </Menu>
           
