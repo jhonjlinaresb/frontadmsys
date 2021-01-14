@@ -89,10 +89,10 @@ const { SubMenu } = Menu;
               <Breadcrumb.Item>Tickets</Breadcrumb.Item>
             </Breadcrumb>
             
-            <div className="site-layout-background">
+            <div className="site-layout-background" style={{ margin: '0 16px' }}>
               View Tickets
               <Col>
-              <Table dataSource={tickets}>
+              <Table dataSource={tickets} pagination={{ pageSize: 5 }}>
                   <ColumnGroup title="Tickets">
                     
                   <Column title="Status" dataIndex="status" key='status'
@@ -113,7 +113,7 @@ const { SubMenu } = Menu;
                 
               )}
             />
-            <Pagination defaultCurrent={1} total={3} />
+            
           </Table>
           </Col>
   

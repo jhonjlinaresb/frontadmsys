@@ -59,7 +59,7 @@ function App() {
         
         <CheckPrivileges user={user} roles={['admin']}>
           <Route path='/users' exact><Users user={Users}/></Route>
-          <Route path='/ShowTickets' exact><ShowTickets tickets={ShowTickets}/></Route>
+          <Route path='/showtickets' exact><ShowTickets tickets={ShowTickets}/></Route>
         </CheckPrivileges>
         
         
