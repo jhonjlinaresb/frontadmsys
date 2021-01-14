@@ -21,7 +21,7 @@ const tailLayout = {
         axios.post(process.env.REACT_APP_BASE_URL +'/users/login',users)
         .then(res=>{
          // props.setUser(res.data.user) //seteo el user como estado del App.js
-            console.log("res data chanda: "+JSON.stringify(res.data));
+            console.log("res data Login: "+JSON.stringify(res.data));
             setUser(res.data.user1) //seteo el user como estado del App.js
             localStorage.setItem('authToken',res.data.token);
             localStorage.setItem('user',JSON.stringify(res.data.user1))
