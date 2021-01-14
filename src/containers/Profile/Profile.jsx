@@ -8,7 +8,7 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   DesktopOutlined,
   PieChartOutlined,
-  FileOutlined,
+  DeleteOutlined,
   UserOutlined,
   PoweroffOutlined,
   EyeOutlined,
@@ -37,7 +37,7 @@ const { SubMenu } = Menu;
     console.log(ObjectId);
     let a = ObjectId._id;
     console.log(a);
-    //console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a)
+     console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a)
       axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a,{})
       .then(res=>userTickets(res.data.a));
     
@@ -109,7 +109,8 @@ const { SubMenu } = Menu;
               title="Action"
               key="action"
               render={(ObjectId) => (
-                  <button onClick={() => deleteOne(ObjectId)}>Cancel</button>
+                  <a href="/profile">
+                  <button onClick={() => deleteOne(ObjectId)}><DeleteOutlined /></button></a>
                 
               )}
             />

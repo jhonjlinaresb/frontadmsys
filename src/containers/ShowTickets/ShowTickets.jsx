@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Table, Space } from 'antd';
 
 const ShowTickets = ( ) => {
-    const [ tickets, setTickets ] = useState([]);
+    const [ viewtickets, setTickets ] = useState([]);
     useEffect(() => {
           
       axios.get(process.env.REACT_APP_BASE_URL+'/users/tickets',{
@@ -14,7 +14,7 @@ const ShowTickets = ( ) => {
        const Column = Table;
 return (
     <>
-  <Table dataSource={tickets}>
+  <Table dataSource={viewtickets} pagination={{pageSize: 6}}>
     <Column title="Ticket Id" dataIndex="_id" key='_id' />
     <Column title="Status" dataIndex="status" key="status" />
     <Column title="date" dataIndex="date" key='date' />
