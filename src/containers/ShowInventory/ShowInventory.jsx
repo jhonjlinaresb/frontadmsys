@@ -5,7 +5,7 @@ import { Table } from 'antd';
 
 import {
   CheckOutlined,
-  SyncOutlined,
+  CheckCircleTwoTone,
   ArrowLeftOutlined
 } from '@ant-design/icons';
 
@@ -18,12 +18,12 @@ const ShowInventoy = ( ) => {
       }).then(res=>setInventory(res.data));
             }, [])
       
-      const deleteOne = ( ObjectId ) => {
+      const deleteComputer = ( ObjectId ) => {
       console.log(ObjectId);
       let a = ObjectId._id;
       console.log(a);
-      console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/inventory'+a)
-      axios.delete(process.env.REACT_APP_BASE_URL+'/inventory'+a,{})
+      console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/inventory/'+a)
+      axios.delete(process.env.REACT_APP_BASE_URL+'/inventory/'+a,{})
       .then(res=>setInventory(res.data.a));
        }
   
@@ -31,11 +31,13 @@ const ShowInventoy = ( ) => {
 return (
     <>
     <Link style={{color: 'black', margin: '2px'}}to="/admin"><button><ArrowLeftOutlined />Back to Admin</button></Link>
-    <Table dataSource={inventory} pagination={{pageSize: 8}}>
+    <div className="site-card-border-less-wrapper" style={{ display: 'flex', padding: '10px', justifyItems: 'center', justifyContent: 'center'    }}>
+    
+    <Table dataSource={inventory} pagination={{pageSize: 5}}>
 
-    <Column title="Ticket Id" dataIndex="_id" key='_id' />
+    
     <Column title="Status" dataIndex="status" key='status'
-    render={() => (<SyncOutlined spin />)} />
+    render={() => (<CheckCircleTwoTone twoToneColor="#52c41a" />)} />
     <Column title="date" dataIndex="date" key='date' />
     <Column title="Observations" dataIndex="observations" key='observations' />
     <Column title="Text" dataIndex="text" key='text' />
@@ -55,17 +57,17 @@ return (
 
     
     <Column
-              title="Finish"
+              title="Delete"
               key="action"
               render={(ObjectId) => (
                   <a href="/showinventory">
-                  <button onClick={() => deleteOne(ObjectId)}><CheckOutlined /></button></a>
+                  <button onClick={() => deleteComputer(ObjectId)}><CheckOutlined /></button></a>
                 
               )}
             />
   </Table>
   
-  
+  </div>
   </>
 );
 }
