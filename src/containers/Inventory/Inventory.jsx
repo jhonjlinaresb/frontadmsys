@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Form, Input, Button, notification, Switch } from 'antd';
 
-import { DatePicker } from 'antd';
+import { DatePicker , Select} from 'antd';
 import axios from 'axios';
 import {
     DesktopOutlined,
@@ -14,6 +14,7 @@ import {
 import TextArea from 'antd/lib/input/TextArea';
 
 const {  Sider, Content } = Layout;
+const { Option } = Select;
 const { SubMenu } = Menu;
 
 
@@ -52,10 +53,8 @@ const Inventory = ({ user }) => {
     };
     return (
       <>
-       <Layout>
-       <Content>
-      <div className="site-card-border-less-wrapper" style={{ textAlign: 'center', display: 'flex', padding: '10px', justifyContent: 'center'}}>
       
+      <Layout>
         <Form className="forminventory"
             /* {...layout} */
             name="basic"
@@ -66,7 +65,8 @@ const Inventory = ({ user }) => {
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
         >
-
+            <div className="site-card-border-less-wrapper" style={{ display: 'flex', padding: '10px', justifyItems: 'center', justifyContent: 'center'   }}>
+           
             <Form.Item
             className="status"
                 label="Status"
@@ -109,18 +109,8 @@ const Inventory = ({ user }) => {
                 <Input placeholder="Your Observations" />
                 </Form.Item>
 
-            <Form.Item
-                label="Notes"
-                name="text"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Describe your problem',
-                    },
-                ]}
-                >
-            <TextArea />
-            </Form.Item>
+            </div>
+            <div className="site-card-border-less-wrapper" style={{ display: 'flex', padding: '10px', justifyItems: 'center', justifyContent: 'center'   }}>
 
             <Form.Item
                 label="Mark"
@@ -133,20 +123,169 @@ const Inventory = ({ user }) => {
                 ]}
                 >
                 <Input placeholder="Lenovo" />
+            </Form.Item>
+
+            <Form.Item
+                label="Model"
+                name="model"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Model of computer',
+                    },
+                ]}
+                >
+                <Input placeholder="111q76" />
                 </Form.Item>
+
+                <Form.Item
+                label="Serial"
+                name="serial"
+                rules={[
+                    {
+                        required: true,
+                        message: 'serial of computer',
+                    },
+                ]}
+                >
+                <Input placeholder="SR834FY" />
+                </Form.Item>
+        
+
+                <Form.Item
+                label="SO"
+                name="so"
+                rules={[
+                    {
+                        required: true,
+                        message: 'System Operating of computer',
+                    },
+                ]}
+                >
+                <Select placeholder="Please select SO">
+                <Option value="china">Windows</Option>
+                <Option value="usa">Linux</Option>
+                </Select>
+                </Form.Item>
+
+                </div>
+
+                <div className="site-card-border-less-wrapper" style={{ display: 'flex', padding: '10px', justifyItems: 'center', justifyContent: 'center'    }}>
+                
+                
+
+                <Form.Item
+                label="RAM"
+                name="ram"
+                rules={[
+                    {
+                        required: true,
+                        message: 'ram of computer',
+                    },
+                ]}
+                >
+                <Input placeholder="8GB" />
+                </Form.Item>
+
+                <Form.Item
+                label="Processor"
+                name="processor"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Processor of computer',
+                    },
+                ]}
+                >
+                <Input placeholder="Intel Core I7" />
+                </Form.Item>
+
+                <Form.Item
+                label="Disk"
+                name="disk"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Disk or SSD',
+                    },
+                ]}
+                >
+                <Input placeholder="Adata SSD 480GB" />
+                </Form.Item>
+
+                <Form.Item
+                label="Price"
+                name="price"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Price of computer',
+                    },
+                ]}
+                >
+                <Input placeholder="1000$" />
+                </Form.Item>
+                </div>
+
+                <div className="site-card-border-less-wrapper" style={{ display: 'flex', padding: '10px', justifyItems: 'center', justifyContent: 'center'    }}>
+
+                <Form.Item
+                label="HDV"
+                name="hdv"
+                rules={[
+                    {
+                        required: true,
+                        message: 'HDV Fisic',
+                    },
+                ]}
+                >
+                <Select placeholder="You have HDV fisic?">
+                <Option value="china">Yes</Option>
+                <Option value="usa">Not</Option>
+                </Select>
+                </Form.Item>
+
+                <Form.Item
+                label="User"
+                name="user"
+                rules={[
+                    {
+                        required: true,
+                        message: 'User assigned for computer',
+                    },
+                ]}
+                >
+                <Input placeholder="CONT-01" />
+                </Form.Item>
+
+                <Form.Item
+                label="Notes"
+                name="text"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Add Notes of computer',
+                    },
+                ]}
+                >
+            <TextArea />
+            </Form.Item>
+
+                </div>
+
+                <div className="site-card-border-less-wrapper" style={{ display: 'flex', padding: '10px', justifyItems: 'center', justifyContent: 'center'    }}>
 
             <Form.Item /* {...tailLayout} */>
                 <Button type="primary" htmlType="submit">
-                    Create
+                    Create Inventory
                 </Button>
             </Form.Item>
+            </div>
             
         </Form>
-        
-      
-            </div>
-        </Content>
         </Layout>
+      
+            
     </>
 );}
 export default Inventory;
