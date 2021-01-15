@@ -73,7 +73,7 @@ const { Meta } = Card;
                 style={{ width: 300 }} 
               >
               <Meta title={<p><ClusterOutlined />Inventory</p>} description='You have admin of Inventory'/>
-              <button>Create</button>
+              <Link style={{color: 'blue', margin: '2px'}}to="/inventory"><button>Create</button></Link>
               <button>View</button>
               </Card><hr/>
 

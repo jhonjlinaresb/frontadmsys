@@ -5,12 +5,7 @@ import { Form, Input, Button, notification, Switch } from 'antd';
 
 import { DatePicker , Select} from 'antd';
 import axios from 'axios';
-import {
-    DesktopOutlined,
-    PieChartOutlined,
-    FileOutlined,
-    UserOutlined,
-  } from '@ant-design/icons';
+import {ArrowLeftOutlined} from '@ant-design/icons';
 import TextArea from 'antd/lib/input/TextArea';
 
 const {  Sider, Content } = Layout;
@@ -55,6 +50,7 @@ const Inventory = ({ user }) => {
       <>
       
       <Layout>
+      <Link style={{color: 'black', margin: '2px'}}to="/admin"><button><ArrowLeftOutlined />Back to Admin</button></Link>
         <Form className="forminventory"
             /* {...layout} */
             name="basic"
@@ -163,8 +159,9 @@ const Inventory = ({ user }) => {
                 ]}
                 >
                 <Select placeholder="Please select SO">
-                <Option value="china">Windows</Option>
-                <Option value="usa">Linux</Option>
+                <Option value="windows">Windows</Option>
+                <Option value="linux">Linux</Option>
+                <Option value="macos">Mac OS</Option>
                 </Select>
                 </Form.Item>
 
@@ -240,8 +237,8 @@ const Inventory = ({ user }) => {
                 ]}
                 >
                 <Select placeholder="You have HDV fisic?">
-                <Option value="china">Yes</Option>
-                <Option value="usa">Not</Option>
+                <Option value="yes">Yes</Option>
+                <Option value="no">No</Option>
                 </Select>
                 </Form.Item>
 

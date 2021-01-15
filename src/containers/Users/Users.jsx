@@ -3,11 +3,7 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { Table, Space } from 'antd';
 
-import {
-  CheckOutlined,
-  SyncOutlined,
-  ArrowLeftOutlined
-} from '@ant-design/icons';
+import {ArrowLeftOutlined} from '@ant-design/icons';
 
 const Users = () => {
     const [users, setUsers] = useState([]);

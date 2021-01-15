@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
-import { Table, Space } from 'antd';
+import { Table } from 'antd';
 
 import {
   CheckOutlined,
