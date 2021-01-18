@@ -1,9 +1,18 @@
-# Getting Started with Create React App
+# Welcome to APP AdmSys
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ The Frontend of  App **Admsys** is created with love & uses technologies such as:
+ - ReactJS - Hooks.
+ - Antdesi.
+ - SASS.
+ - Axios.
+![home](https://i.ibb.co/09fY8xm/image.png)
 
-## Available Scripts
 
+# Files
+
+Start Server, which means all your files are automatically saved locally and are accessible **offline!**
+ ### `npm i -y`
+ ### `npm start`
 In the project directory, you can run:
 
 ### `npm start`
