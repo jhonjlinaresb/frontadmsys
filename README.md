@@ -21,4 +21,5 @@ Download Files and Start Server, which means all your files are automatically sa
 -   Password (Example: 1234!Qwer) - (From 8 to 10 characters | symbol: *?! | One capital letter).
 - DNI (Example: 59952143K).
 >Note: For the admin user the 'role' must be given from the backend or database
+
 [![Register user](https://i.gyazo.com/43ee82f573e56cdb1600ed434077e24a.gif)](https://gyazo.com/43ee82f573e56cdb1600ed434077e24a)
