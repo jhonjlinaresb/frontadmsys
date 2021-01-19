@@ -1,8 +1,8 @@
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Profile.scss'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Table, Pagination, Col, notification } from 'antd';
+import { Table, Col, notification } from 'antd';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
@@ -32,15 +32,13 @@ const { SubMenu } = Menu;
                 userTickets(res.data.ticket)
                 notification.success({ message :'View Tickets',description:'Tickets by DNI'})
               });
-  
-          
-      }, [])
+        }, [user])
       
   const deleteOne = ( ObjectId ) => {
     console.log(ObjectId);
     let a = ObjectId._id;
     console.log(a);
-     console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a)
+     //console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a)
       axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a,{})
       .then(res=>{userTickets(res.data.a)
       notification.success({ message :'Ticket Delete',description:'Ticket is cancel succesfully'})

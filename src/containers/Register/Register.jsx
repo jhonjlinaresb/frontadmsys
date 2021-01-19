@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input, Button, notification } from 'antd';
 import { Card } from 'antd';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 const layout = {
     labelCol: {
         span: 8,

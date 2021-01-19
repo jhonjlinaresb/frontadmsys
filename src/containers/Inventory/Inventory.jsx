@@ -1,16 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { Form, Input, Button, notification, Switch } from 'antd';
+import { Layout, Form, Input, Button, notification, Switch } from 'antd';
 
 import { DatePicker , Select} from 'antd';
 import axios from 'axios';
 import {ArrowLeftOutlined} from '@ant-design/icons';
 import TextArea from 'antd/lib/input/TextArea';
 
-const {  Sider, Content } = Layout;
 const { Option } = Select;
-const { SubMenu } = Menu;
 
 
 const Inventory = ({ user }) => {
