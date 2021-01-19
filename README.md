@@ -64,3 +64,24 @@ Download Files and Start Server, which means all your files are automatically sa
 #### An ordinary user will not have access and will be redirected to user view.
 [![Common user](https://i.gyazo.com/506021e2998a4ee8c6b37c535066d1e2.gif)](https://gyazo.com/506021e2998a4ee8c6b37c535066d1e2)
 
+## User Admin:
+
+The admin user has both common user and administrator permissions, so he can perform the same functions as the users only with three more views.
+[![Admin](https://i.gyazo.com/953c83f42ee1efba4cedbc3f976c5b7c.gif)](https://gyazo.com/953c83f42ee1efba4cedbc3f976c5b7c)
+- Inventory: To create computer equipment inventory, view, manage, edit, delete.
+[![Inventory(create, view)](https://i.gyazo.com/f1607554c2ed44e3ffcccc523b0683a4.gif)](https://gyazo.com/f1607554c2ed44e3ffcccc523b0683a4)
+>Create a Computer for the Inventory:
+status: Active.
+date: Date of purchase
+observations: Computer Observations (Hit, license, drivers, etc...).
+mark: manufacturer's brand.
+model: Model of computer.
+serial: Serial of computer.
+so: Operating system, Windows, Linux or MacOS.
+ram: RAM memory capacity.
+processor: Processor type, generation, make and model.
+disk: Maximum storage capacity and type of technology.
+price: Value of company assets.
+hdv: Check if you have an active resume in another document.
+user: User assigned to the computer.
+text: We add details such as colour, charger, laptop or PC.

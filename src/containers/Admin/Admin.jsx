@@ -82,16 +82,16 @@ const { Meta } = Card;
                 style={{ width: 400 }} 
               >
                 <TeamOutlined />
-              <Meta title='All Users' description={user?.name}/>
+              <Meta title='All Users' description='Click here to see all users, edit and delete by id'/>
               
               </Card></Link><hr/>
 
               <Link to="/showtickets"><Card
                 hoverable
-                style={{ width: 500 }} 
+                style={{ width: 400 }} 
               >
               <DatabaseOutlined />
-              <Meta title='All Tickets' description='Click here for view all tickets of users'/>
+              <Meta title='All Tickets' description='Click here for view and solution all tickets of users'/>
               </Card></Link>
 
             </div>
