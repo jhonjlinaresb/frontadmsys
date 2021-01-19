@@ -41,3 +41,9 @@ Download Files and Start Server, which means all your files are automatically sa
 - Text: Brief description of the problem.
 
 [![Image from Gyazo](https://i.gyazo.com/3224509dc71cf996f292a75a7f8eaaed.gif)](https://gyazo.com/3224509dc71cf996f292a75a7f8eaaed)
+
+## View Tickets:
+##### In dashboard you click on View tickets for View and Delete ticket:
+-   Tickets are shown to each user by means of the DNI and deleted by the ObjectId of document.
+
+[![View tickets user](https://i.gyazo.com/c3f2b205c688e97dbd1be53a1e920770.gif)](https://gyazo.com/c3f2b205c688e97dbd1be53a1e920770)
