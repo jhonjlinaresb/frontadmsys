@@ -31,7 +31,7 @@ const ShowTickets = ( ) => {
 return (
     <>
     <Link style={{color: 'black', margin: '2px'}}to="/admin"><button><ArrowLeftOutlined />Back to Admin</button></Link>
-    <Table dataSource={viewtickets} pagination={{pageSize: 8}}>
+    <Table dataSource={viewtickets} pagination={{pageSize: 6}}>
     <Column title="Ticket Id" dataIndex="_id" key='_id' />
     <Column title="Status" dataIndex="status" key='status'
     render={() => (<SyncOutlined spin />)} />

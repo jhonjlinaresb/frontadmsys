@@ -55,7 +55,12 @@ Download Files and Start Server, which means all your files are automatically sa
 
 ![View User](https://i.ibb.co/ZzJFCJm/image.png)
 
+## Logout:
+##### In dashboard you click on user after in Logout for exit of user:
+[![Logout User](https://i.gyazo.com/3f0f7b1fdfd01b4d750e057b5660aa93.gif)](https://gyazo.com/3f0f7b1fdfd01b4d750e057b5660aa93)
+
 ## Admin:
 ### In the Admin view, only the administrator has permission.
 #### An ordinary user will not have access and will be redirected to user view.
 [![Common user](https://i.gyazo.com/506021e2998a4ee8c6b37c535066d1e2.gif)](https://gyazo.com/506021e2998a4ee8c6b37c535066d1e2)
+
