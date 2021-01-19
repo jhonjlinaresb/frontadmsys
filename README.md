@@ -26,8 +26,8 @@ Download Files and Start Server, which means all your files are automatically sa
 
 ## Login:
 ##### For Login you need:
--   Email (Example:  [user@mail.com](mailto:user@mail.com)).
--   Password (Example: 1234!Qwer) - (From 8 to 10 characters | symbol: *?! | One capital letter).
+-   Email (Your user's email:  [user@mail.com](mailto:user@mail.com)).
+-   Password (Your user's password: 1234!Qwer).
 >Note: This user is for create tickets and delete.
 
 [![Login User](https://i.gyazo.com/bd5623990a80d627aac6e281c5e27c05.gif)](https://gyazo.com/bd5623990a80d627aac6e281c5e27c05)
