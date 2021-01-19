@@ -2,9 +2,11 @@
 
  The Frontend of  App **Admsys** is created with love & uses technologies such as:
  - ReactJS - Hooks.
- - Antdesi.
+ - ReactDOM - Router
+ - Antdesign.
  - SASS.
  - Axios.
+ - JsonWebToken
 ![home](https://i.ibb.co/09fY8xm/image.png)
 
 
