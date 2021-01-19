@@ -4,7 +4,7 @@ import {notification} from 'antd';
 
 const CheckPrivileges = (props) => {
     return props.roles.includes(props.user.role) ? props.children : 
-    notification.error({message:'Access Invalid',description:'Dont have permisos '}) || <Redirect to='/viewuser' />;
+    notification.error({message:'Access Invalid',description:'you do not have permissions '}) || <Redirect to='/viewuser' />;
 }
 
 export default CheckPrivileges;
