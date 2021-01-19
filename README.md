@@ -31,3 +31,13 @@ Download Files and Start Server, which means all your files are automatically sa
 >Note: This user is for create tickets and delete.
 
 [![Login User](https://i.gyazo.com/bd5623990a80d627aac6e281c5e27c05.gif)](https://gyazo.com/bd5623990a80d627aac6e281c5e27c05)
+
+## Create Ticket:
+##### In dashboard you click on Create ticket for support:
+-   Status: Active.
+-   Date: Preferred date for support.
+-  Hour: Preferred time for the support date.
+- Error: Problem you have.
+- Text: Brief description of the problem.
+
+[![Image from Gyazo](https://i.gyazo.com/3224509dc71cf996f292a75a7f8eaaed.gif)](https://gyazo.com/3224509dc71cf996f292a75a7f8eaaed)
