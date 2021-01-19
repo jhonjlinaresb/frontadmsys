@@ -47,3 +47,8 @@ Download Files and Start Server, which means all your files are automatically sa
 -   Tickets are shown to each user by means of the DNI and deleted by the ObjectId of document.
 
 [![View tickets user](https://i.gyazo.com/c3f2b205c688e97dbd1be53a1e920770.gif)](https://gyazo.com/c3f2b205c688e97dbd1be53a1e920770)
+
+## View User:
+##### In dashboard you click on user after in View for data of user:
+
+![View User](https://i.ibb.co/ZzJFCJm/image.png)
