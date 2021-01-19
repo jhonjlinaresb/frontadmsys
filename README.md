@@ -72,19 +72,19 @@ The admin user has both common user and administrator permissions, so he can per
 [![Inventory(create, view)](https://i.gyazo.com/f1607554c2ed44e3ffcccc523b0683a4.gif)](https://gyazo.com/f1607554c2ed44e3ffcccc523b0683a4)
 >Create a Computer for the Inventory:
 
-status: Active.
-date: Date of purchase
-observations: Computer Observations (Hit, license, drivers, etc...).
-mark: manufacturer's brand.
-model: Model of computer.
-serial: Serial of computer.
-so: Operating system, Windows, Linux or MacOS.
-ram: RAM memory capacity.
-processor: Processor type, generation, make and model.
-disk: Maximum storage capacity and type of technology.
-price: Value of company assets.
-hdv: Check if you have an active resume in another document.
-user: User assigned to the computer.
-text: We add details such as colour, charger, laptop or PC.
+-status: Active.
+-date: Date of purchase
+-observations: Computer Observations (Hit, license, drivers, etc...).
+-mark: manufacturer's brand.
+-model: Model of computer.
+-serial: Serial of computer.
+-so: Operating system, Windows, Linux or MacOS.
+-ram: RAM memory capacity.
+-processor: Processor type, generation, make and model.
+-disk: Maximum storage capacity and type of technology.
+-price: Value of company assets.
+-hdv: Check if you have an active resume in another document.
+-user: User assigned to the computer.
+-text: We add details such as colour, charger, laptop or PC.
 
 [![Add Inventory](https://i.gyazo.com/ec11634a323cbb30a7a0119a73c94867.gif)](https://gyazo.com/ec11634a323cbb30a7a0119a73c94867)
