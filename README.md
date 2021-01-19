@@ -71,6 +71,7 @@ The admin user has both common user and administrator permissions, so he can per
 - Inventory: To create computer equipment inventory, view, manage, edit, delete.
 [![Inventory(create, view)](https://i.gyazo.com/f1607554c2ed44e3ffcccc523b0683a4.gif)](https://gyazo.com/f1607554c2ed44e3ffcccc523b0683a4)
 >Create a Computer for the Inventory:
+
 status: Active.
 date: Date of purchase
 observations: Computer Observations (Hit, license, drivers, etc...).
