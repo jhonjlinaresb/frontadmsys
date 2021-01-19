@@ -68,8 +68,10 @@ Download Files and Start Server, which means all your files are automatically sa
 
 The admin user has both common user and administrator permissions, so he can perform the same functions as the users only with three more views.
 [![Admin](https://i.gyazo.com/953c83f42ee1efba4cedbc3f976c5b7c.gif)](https://gyazo.com/953c83f42ee1efba4cedbc3f976c5b7c)
-- Inventory: To create computer equipment inventory, view, manage, edit, delete.
+- ### Inventory: To create computer equipment inventory, view, manage, edit, delete.
+
 [![Inventory(create, view)](https://i.gyazo.com/f1607554c2ed44e3ffcccc523b0683a4.gif)](https://gyazo.com/f1607554c2ed44e3ffcccc523b0683a4)
+
 >Create a Computer for the Inventory:
 
 - status: Active.
@@ -88,3 +90,7 @@ The admin user has both common user and administrator permissions, so he can per
 - text: We add details such as colour, charger, laptop or PC.
 
 [![Add Inventory](https://i.gyazo.com/ec11634a323cbb30a7a0119a73c94867.gif)](https://gyazo.com/ec11634a323cbb30a7a0119a73c94867)
+
+>View Inventory and Delete Computer:
+
+[![View and Delete](https://i.gyazo.com/c66a12abe3c5044d42bbd5a993f1d2c6.gif)](https://gyazo.com/c66a12abe3c5044d42bbd5a993f1d2c6)

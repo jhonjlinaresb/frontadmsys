@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
-import { Table } from 'antd';
+import { Table, notification } from 'antd';
 
 import {
   CheckOutlined,
   CheckCircleTwoTone,
+  DeleteOutlined,
   ArrowLeftOutlined
 } from '@ant-design/icons';
 
@@ -24,8 +25,10 @@ const ShowInventoy = ( ) => {
       console.log(a);
       console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/inventory/'+a)
       axios.delete(process.env.REACT_APP_BASE_URL+'/inventory/'+a,{})
-      .then(res=>setInventory(res.data.a));
-       }
+      .then(res=>{setInventory(res.data.a)
+      notification.success({ message :'Computer Delete',description:'Computer is delete of inventory succesfully'})
+      });
+    }
   
        const Column = Table;
 return (
@@ -33,7 +36,7 @@ return (
     <Link style={{color: 'black', margin: '2px'}}to="/admin"><button><ArrowLeftOutlined />Back to Admin</button></Link>
     <div className="site-card-border-less-wrapper" style={{ display: 'flex', padding: '10px', justifyItems: 'center', justifyContent: 'center'    }}>
     
-    <Table dataSource={inventory} pagination={{pageSize: 5}}>
+    <Table dataSource={inventory} pagination={{pageSize: 3}}>
 
     
     <Column title="Status" dataIndex="status" key='status'
@@ -60,8 +63,8 @@ return (
               title="Delete"
               key="action"
               render={(ObjectId) => (
-                  <a href="/showinventory">
-                  <button onClick={() => deleteComputer(ObjectId)}><CheckOutlined /></button></a>
+                  
+                  <button><a href="/showinventory" onClick={() => deleteComputer(ObjectId)}><DeleteOutlined /></a></button>
                 
               )}
             />
