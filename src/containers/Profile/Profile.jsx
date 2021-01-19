@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './Profile.scss'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Table, Pagination, Col } from 'antd';
+import { Table, Pagination, Col, notification } from 'antd';
 
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
@@ -28,7 +28,10 @@ const { SubMenu } = Menu;
               console.log(JSON.stringify(user));
               console.log('path tickets : '+process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets')
               axios.get(process.env.REACT_APP_BASE_URL+'/users/'+user.dni+'/tickets',{})
-              .then(res=>userTickets(res.data.ticket));
+              .then(res=>{
+                userTickets(res.data.ticket)
+                notification.success({ message :'View Tickets',description:'Tickets by DNI'})
+              });
   
           
       }, [])
@@ -39,12 +42,11 @@ const { SubMenu } = Menu;
     console.log(a);
      console.log('path Variable : '+process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a)
       axios.delete(process.env.REACT_APP_BASE_URL+'/users'+'/tickets/'+a,{})
-      .then(res=>userTickets(res.data.a));
-    
-      
+      .then(res=>{userTickets(res.data.a)
+      notification.success({ message :'Ticket Delete',description:'Ticket is cancel succesfully'})
+      });  
   }
-  
-  
+
   const { Column, ColumnGroup } = Table;
     
     
@@ -109,11 +111,13 @@ const { SubMenu } = Menu;
               title="Action"
               key="action"
               render={(ObjectId) => (
-                  <a href="/profile">
-                  <button onClick={() => deleteOne(ObjectId)}><DeleteOutlined /></button></a>
+                  
+                  <button><a href="/profile" onClick={() => deleteOne(ObjectId)}><DeleteOutlined /></a>
+                  </button>
                 
               )}
             />
+            
             
           </Table>
           </Col>
