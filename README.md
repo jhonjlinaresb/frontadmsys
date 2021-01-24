@@ -92,6 +92,14 @@ The admin user has both common user and administrator permissions, so he can per
 
 [![Add Inventory](https://i.gyazo.com/ec11634a323cbb30a7a0119a73c94867.gif)](https://gyazo.com/ec11634a323cbb30a7a0119a73c94867)
 
->View Inventory and Delete Computer:
+>View and Delete of Inventory
 
-[![View and Delete](https://i.gyazo.com/c66a12abe3c5044d42bbd5a993f1d2c6.gif)](https://gyazo.com/c66a12abe3c5044d42bbd5a993f1d2c6)
+[![Image from Gyazo](https://i.gyazo.com/2356b6ed38c70c8c2ff70b53a142421f.gif)](https://gyazo.com/2356b6ed38c70c8c2ff70b53a142421f)
+
+- View All Users and Delete:
+
+[![Image from Gyazo](https://i.gyazo.com/9bc7d79ef68ebf03580b3cd685c04fda.gif)](https://gyazo.com/9bc7d79ef68ebf03580b3cd685c04fda)
+
+- View All tickets of users and Solution:
+
+[![Image from Gyazo](https://i.gyazo.com/0c0c218c9f8497029f87524f6ea08e61.gif)](https://gyazo.com/0c0c218c9f8497029f87524f6ea08e61)
