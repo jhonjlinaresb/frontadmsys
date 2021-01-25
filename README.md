@@ -1,4 +1,5 @@
 # Welcome to APP AdmSys
+### Deploy to Heroku [FrontAdmSys](https://frontadmsys.herokuapp.com/).
 
  The Frontend of  App **Admsys** is created with love & uses technologies such as:
  - ReactJS - Hooks.
@@ -6,7 +7,9 @@
  - Antdesign.
  - SASS.
  - Axios.
- - JsonWebToken
+ - JsonWebToken.
+ - Express-Favicon.
+ - Heroku.
  
 ![home](https://i.ibb.co/09fY8xm/image.png)
 
